@@ -11,11 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="610dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
-        android:background="@drawable/gradient"
-        />
+        android:background="@drawable/gradient" />
 
     <TextView
         android:id="@+id/roombtiLogo"
@@ -23,10 +22,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="47dp"
-        android:text="@string/roombtiLogo_text"
-        android:textAppearance="@style/roombtiLogo_text_theme"
         android:gravity="center"
-        />
+        android:text="@string/roombtiLogo_text"
+        android:textAppearance="@style/roombtiLogo_text_theme" />
 
     <TextView
         android:id="@+id/slogan"
@@ -34,10 +32,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="109dp"
-        android:text="@string/slogan_text"
-        android:textAppearance="@style/slogan_text_theme"
         android:gravity="center"
-        />
+        android:text="@string/slogan_text"
+        android:textAppearance="@style/slogan_text_theme" />
 
     <View
         android:id="@+id/mbti_rect"
@@ -46,8 +43,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="173dp"
         android:background="@drawable/mbti_rect"
-        android:gravity="center"
-        />
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/welcome_text_mbti"
@@ -55,22 +51,20 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="264dp"
-        android:text="@string/welcome_mbti_text"
-        android:textAppearance="@style/hello_text_theme"
         android:gravity="center"
-        />
+        android:text="@string/welcome_mbti_text"
+        android:textAppearance="@style/hello_text_theme" />
 
     <TextView
         android:id="@+id/select_mbti_text_plain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="318dp"
-        android:text="@string/select_mbti_text_plain"
-        android:textAppearance="@style/welcome_text_theme"
         android:gravity="center"
-        />
+        android:text="@string/select_mbti_text_plain"
+        android:textAppearance="@style/welcome_text_theme" />
 
     <Spinner
         android:id="@+id/mbti_dropdown_input"
@@ -81,41 +75,39 @@
         android:layout_marginTop="380dp"
 
         android:background="@drawable/mbti_dropdown"
-        android:spinnerMode="dropdown"
+        android:dropDownVerticalOffset="34dp"
+        android:entries="@array/mbti_dropdown"
+        android:gravity="start|center_vertical"
+
+        android:hint="@string/register_name_ghost"
         android:paddingStart="8dp"
         android:paddingEnd="38dp"
 
-        android:hint="@string/register_name_ghost"
-        android:textColorHint="@color/app_blue"
-        android:textAppearance="@style/register_text_theme"
-
-        android:gravity="start|center_vertical"
-        android:textAlignment="viewStart"
-
-        android:dropDownVerticalOffset="34dp"
         android:popupBackground="#FFFFFF"
-        android:entries="@array/mbti_dropdown"
-        android:prompt="@string/mbti_dropdown_select_text"/>
+        android:prompt="@string/mbti_dropdown_select_text"
+
+        android:spinnerMode="dropdown"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/register_text_theme"
+        android:textColorHint="@color/app_blue" />
 
     <ImageView
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginTop="388dp"
         android:layout_marginStart="226dp"
-        android:background="@drawable/mbti_dropdown_arrow">
-    </ImageView>
+        android:layout_marginTop="388dp"
+        android:background="@drawable/mbti_dropdown_arrow"></ImageView>
 
     <TextView
         android:id="@+id/mbti_test_link_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="526dp"
-        android:text="@string/mbti_test_link_text"
-        android:textAppearance="@style/mbti_test_text_theme"
         android:gravity="center"
-        />
+        android:text="@string/mbti_test_link_text"
+        android:textAppearance="@style/mbti_test_text_theme" />
 
     <Button
         android:id="@+id/mbti_next_button"
@@ -124,9 +116,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="672dp"
         android:background="@drawable/mbti_next_button"
-        android:text="@string/next_text"
-        android:textAppearance="@style/next_text_theme"
         android:gravity="center"
-        />
+        android:onClick="next_register"
+        android:text="@string/next_text"
+        android:textAppearance="@style/next_text_theme" />
 
 </RelativeLayout>
