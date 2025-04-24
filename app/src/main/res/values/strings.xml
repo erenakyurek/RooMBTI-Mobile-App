@@ -22,5 +22,17 @@
     <string name="select_option_text">Please select the option\nwhich suits you.</string>
     <string name="roommate_select_text">I am looking for roommates.</string>
     <string name="home_select_text">I am looking for a home.</string>
-
+    <string name="number_of_housemate_text">Number of housemates:</string>
+    <string name="location_text">Location:</string>
+    <string name="budget_text">Budget:</string>
+    <string name="smoke_allowence_text">Do you allow smoking?:</string>
+    <string name="pet_allowence_text">Do you allow pets?:</string>
+    <string name="houserenter_upload_descr_text">Upload at least 5\nphotos of your house.</string>
+    <string name="yes_text">Yes</string>
+    <string name="no_text">No</string>
+    <string name="person_text">/person</string>
+    <string name="rent_text">rent</string>
+    <string name="now_text">now</string>
+    <string name="max_text">max</string>
+    <string name="city_mun_text">city, municipality</string>
 </resources>

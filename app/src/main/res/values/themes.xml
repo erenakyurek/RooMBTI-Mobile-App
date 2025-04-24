@@ -109,4 +109,16 @@
         <item name="android:fontFamily">@font/montserrat_regular</item>
     </style>
 
+    <style name="houserenter_upload_descr_text_theme">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="yes_text_theme">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
 </resources>
