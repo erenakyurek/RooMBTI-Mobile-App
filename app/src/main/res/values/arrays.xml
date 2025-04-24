@@ -19,4 +19,17 @@
         <item>ENFJ</item>
         <item>ENTJ</item>
     </string-array>
+
+    <array name="room_images">
+        <item>@drawable/room1</item>
+        <item>@drawable/room2</item>
+        <item>@drawable/room3</item>
+        <item>@drawable/room1</item>
+        <item>@drawable/room3</item>
+        <item>@drawable/room1</item>
+        <item>@drawable/room3</item>
+        <item>@drawable/room2</item>
+    </array>
+
 </resources>
+
