@@ -52,7 +52,7 @@
         />
 
     <Button
-        android:id="@+id/upload_button"
+        android:id="@+id/register_profile_pic_upload_button"
         android:layout_width="90dp"
         android:layout_height="25dp"
         android:layout_alignParentStart="true"
@@ -199,10 +199,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="762dp"
         android:background="@drawable/mbti_next_button"
-        android:text="@string/next_text"
-        android:textAppearance="@style/next_text_theme"
         android:gravity="center"
-        />
+        android:onClick="next_register"
+        android:text="@string/next_text"
+        android:textAppearance="@style/next_text_theme" />
 
     <ImageView
         android:layout_width="79dp"

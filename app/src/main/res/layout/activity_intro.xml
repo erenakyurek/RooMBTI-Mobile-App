@@ -87,10 +87,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="549dp"
         android:background="@drawable/login_button_blue"
-        android:text="@string/login_text"
-        android:textAppearance="@style/login_text_theme"
         android:gravity="center"
-        />
+        android:onClick="login_intro"
+        android:text="@string/login_text"
+        android:textAppearance="@style/login_text_theme" />
 
     <!--
 
@@ -115,10 +115,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="606dp"
         android:background="@drawable/register_button_white"
-        android:text="@string/sign_up_text"
-        android:textAppearance="@style/sign_up_text_theme"
         android:gravity="center"
-        />
+        android:onClick="register_intro"
+        android:text="@string/sign_up_text"
+        android:textAppearance="@style/sign_up_text_theme" />
 
     <!--
     <TextView
