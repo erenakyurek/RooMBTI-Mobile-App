@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RoomInspectActivity">
+
+    <RelativeLayout
+        android:id="@+id/room_inspect"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:orientation="vertical"
+        tools:context=".RoomInspectActivity">
+
+        <View
+            android:id="@+id/profile_pic_main"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bar_photo"
+            /><!--  profil fotosu-->
+
+        <TextView
+            android:id="@+id/roombti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="151dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            android:text="@string/roombti"
+            android:textAppearance="@style/roombti"
+            android:gravity="center_horizontal|center_vertical"
+            />
+
+        <Button
+            android:id="@+id/menu_option"
+            android:layout_width="32dp"
+            android:layout_height="19dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="356dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/menu_bar"
+            /> <!-- menu bar fotosu-->
+
+        <View
+            android:id="@+id/room_inspect_house_big_frame"
+            android:layout_width="376dp"
+            android:layout_height="251dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="143dp"
+            android:background="@drawable/room_inspect_big_photo_frame"
+            />
+
+        <View
+            android:id="@+id/room_inspect_house_big_photo"
+            android:layout_width="376dp"
+            android:layout_height="251dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="143dp"
+            android:background="@drawable/house_big"
+            />
+
+        <View
+            android:id="@+id/room_inspect_photo_scroll_bar"
+            android:layout_width="376dp"
+            android:layout_height="84dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="403dp"
+            android:background="@drawable/room_inspect_photo_scroll_bar"
+            />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontal_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+
+
+
+
+
+    </RelativeLayout>
+</ScrollView>

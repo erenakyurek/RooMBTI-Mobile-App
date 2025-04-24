@@ -16,6 +16,9 @@
             android:name=".MainRoommatesActivity"
             android:exported="false" />
         <activity
+            android:name=".RoomInspectActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginPageActivity"
             android:exported="false" />
         <activity
