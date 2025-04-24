@@ -25,7 +25,7 @@ class IntroActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        loginButton.setOnClickListener() {
+        loginButton.setOnClickListener {
             val intent = Intent(this, MBTISelectionActivity::class.java)
             startActivity(intent)
         }

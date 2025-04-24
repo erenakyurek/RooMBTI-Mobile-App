@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mbti_selection"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -49,7 +50,7 @@
         />
 
     <TextView
-        android:id="@+id/welcome_"
+        android:id="@+id/welcome_text_mbti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -70,6 +71,39 @@
         android:textAppearance="@style/welcome_text_theme"
         android:gravity="center"
         />
+
+    <Spinner
+        android:id="@+id/mbti_dropdown_input"
+
+        android:layout_width="102dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="380dp"
+
+        android:background="@drawable/mbti_dropdown"
+        android:spinnerMode="dropdown"
+        android:paddingStart="8dp"
+        android:paddingEnd="38dp"
+
+        android:hint="@string/register_name_ghost"
+        android:textColorHint="@color/app_blue"
+        android:textAppearance="@style/register_text_theme"
+
+        android:gravity="start|center_vertical"
+        android:textAlignment="viewStart"
+
+        android:dropDownVerticalOffset="34dp"
+        android:popupBackground="#FFFFFF"
+        android:entries="@array/mbti_dropdown"
+        android:prompt="@string/mbti_dropdown_select_text"/>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginStart="226dp"
+        android:background="@drawable/mbti_dropdown_arrow">
+    </ImageView>
 
     <TextView
         android:id="@+id/mbti_test_link_text"
@@ -94,21 +128,5 @@
         android:textAppearance="@style/next_text_theme"
         android:gravity="center"
         />
-
-    <!--
-    <TextView
-        android:id="@+id/next_mbti_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="680dp"
-        android:text="@string/next_text"
-        android:textAppearance="@style/next_text_theme"
-        android:gravity="center"
-        />
-
-    -->
-
-
 
 </RelativeLayout>

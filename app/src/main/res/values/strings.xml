@@ -17,5 +17,6 @@
     <string name="register_age_ghost">Age</string>
     <string name="register_email_ghost">Email</string>
     <string name="register_password_ghost">Password</string>
+    <string name="mbti_dropdown_select_text">Select</string>
 
 </resources>

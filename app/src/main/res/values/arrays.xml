@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mbti_dropdown">
+        <item>Select</item>
+        <item>ISTJ</item>
+        <item>ISFJ</item>
+        <item>INFJ</item>
+        <item>INTJ</item>
+        <item>ISTP</item>
+        <item>ISFP</item>
+        <item>INFP</item>
+        <item>INTP</item>
+        <item>ESTP</item>
+        <item>ESFP</item>
+        <item>ENFP</item>
+        <item>ENTP</item>
+        <item>ESTJ</item>
+        <item>ESFJ</item>
+        <item>ENFJ</item>
+        <item>ENTJ</item>
+    </string-array>
+</resources>
