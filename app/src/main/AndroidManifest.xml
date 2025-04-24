@@ -13,13 +13,19 @@
         android:theme="@style/Theme.RooMBTI"
         tools:targetApi="31">
         <activity
+            android:name=".RoomInspectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PersonInspectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainHousesActivity"
+            android:exported="false" />
+        <activity
             android:name=".DMPageActivity"
             android:exported="false" />
         <activity
             android:name=".MainRoommatesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RoomInspectActivity"
             android:exported="false" />
         <activity
             android:name=".LoginPageActivity"

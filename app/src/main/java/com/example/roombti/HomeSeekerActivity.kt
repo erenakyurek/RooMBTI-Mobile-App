@@ -28,6 +28,7 @@ class HomeSeekerActivity : AppCompatActivity() {
     }
 
     fun home_seeker_next(view: View) {
-
+        val intent = Intent(this, MainHousesActivity::class.java)
+        startActivity(intent)
     }
 }

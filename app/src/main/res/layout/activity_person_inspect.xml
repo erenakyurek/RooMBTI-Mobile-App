@@ -32,7 +32,7 @@
 
     </ImageView>
 
-    <View
+    <Button
         android:id="@+id/user_ellipse"
         android:layout_width="58dp"
         android:layout_height="58dp"
@@ -40,8 +40,9 @@
         android:layout_marginLeft="24dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="24dp"
-        android:background="@drawable/profile_pic_main"
-        />
+        android:background="@drawable/profile_pic_main"/>
+        <!--android:onClick="open_profile"-->
+
 
     <ImageButton
         android:id="@+id/menu_option"
@@ -292,7 +293,7 @@
         />
     <TextView
         android:id="@+id/smokes"
-        android:layout_width="40dp"
+        android:layout_width="70dp"
         android:layout_height="12dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="287dp"

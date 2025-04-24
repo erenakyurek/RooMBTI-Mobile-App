@@ -53,7 +53,7 @@
     <string name="person_inspect_uni">Yeditepe University</string>
     <string name="person_inspect_location">Istanbul, Ataşehir</string>
     <string name="person_inspect_pet">Has no pet</string>
-    <string name="person_inspect_smoke">Smokes</string>
+    <string name="person_inspect_smoke">Not Smokes</string>
     <string name="person_inspect_male">Male</string>
     <string name="ist_atasehir">Istanbul, Atasehir</string>
     <string name="rm3_4">3/4</string>
@@ -67,4 +67,5 @@
     <string name="male_preference_text">Male Preference</string>
     <string name="ersin_kara">Ersin KARA</string>
     <string name="room_inspect_phone_num">+90 (555) 420 13-12</string>
+    <string name="text_here">Text here...</string>
 </resources>

@@ -1,20 +1,22 @@
 package com.example.roombti
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.roombti.databinding.ActivityPersonInspectBinding
-import com.example.roombti.databinding.ActivityRoomInspectBinding
+import com.example.roombti.databinding.ActivityLoginPageBinding
+import com.example.roombti.databinding.ActivityMainHousesBinding
 
-class PersonInspectActivity : AppCompatActivity() {
+class MainHousesActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityPersonInspectBinding
+    private lateinit var binding: ActivityMainHousesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPersonInspectBinding.inflate(layoutInflater)
+        binding = ActivityMainHousesBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         enableEdgeToEdge()
@@ -23,5 +25,9 @@ class PersonInspectActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+    fun open_house(view: View) {
+        val intent = Intent(this, RoomInspectActivity::class.java)
+        startActivity(intent)
     }
 }
