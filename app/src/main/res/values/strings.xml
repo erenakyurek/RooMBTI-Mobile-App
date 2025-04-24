@@ -18,5 +18,9 @@
     <string name="register_email_ghost">Email</string>
     <string name="register_password_ghost">Password</string>
     <string name="mbti_dropdown_select_text">Select</string>
+    <string name="are_you_text">Are you looking\nfor roommates\nor a home?</string>
+    <string name="select_option_text">Please select the option\nwhich suits you.</string>
+    <string name="roommate_select_text">I am looking for roommates.</string>
+    <string name="home_select_text">I am looking for a home.</string>
 
 </resources>
