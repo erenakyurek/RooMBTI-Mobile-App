@@ -502,6 +502,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="752dp"
             android:background="@drawable/chat_logo"
+            android:onClick="open_chat"
             />
 
         <TextView

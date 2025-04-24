@@ -143,7 +143,9 @@
         <ImageView
             android:layout_width="28.41dp"
             android:layout_height="19.55dp"
-            android:src="@drawable/chat_logo" />
+            android:src="@drawable/chat_logo"
+            android:onClick="open_chat"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -311,7 +313,7 @@
         android:layout_marginLeft="251dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="417dp"
-        android:background="@drawable/male_icon"
+        android:background="@drawable/male_icon_black"
         />
     <TextView
         android:id="@+id/male"
