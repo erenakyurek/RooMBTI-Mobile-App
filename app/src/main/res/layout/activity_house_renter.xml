@@ -297,40 +297,40 @@
             android:textAppearance="@style/yes_text_theme"
             android:checked="false" />
 
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/houserenter_pet_yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="207dp"
-
-                android:layout_marginTop="626dp"
-                android:buttonTint="#0C33FF"
-
-                android:checked="false"
-                android:text="@string/yes_text"
-                android:textAppearance="@style/yes_text_theme" />
-
-            <RadioButton
-                android:id="@+id/houserenter_pet_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="626dp"
-
-                android:buttonTint="#0C33FF"
-
-                android:checked="false"
-                android:text="@string/no_text"
-                android:textAppearance="@style/yes_text_theme" />
-
-        </RadioGroup>
 
     </RadioGroup>
 
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/houserenter_pet_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="207dp"
+
+            android:layout_marginTop="626dp"
+            android:buttonTint="#0C33FF"
+
+            android:checked="false"
+            android:text="@string/yes_text"
+            android:textAppearance="@style/yes_text_theme" />
+
+        <RadioButton
+            android:id="@+id/houserenter_pet_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="626dp"
+
+            android:buttonTint="#0C33FF"
+
+            android:checked="false"
+            android:text="@string/no_text"
+            android:textAppearance="@style/yes_text_theme" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/houserenter_next_button"
