@@ -6,16 +6,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import android.content.Intent
-import com.example.roombti.databinding.ActivityCommonBinding
+import com.example.roombti.databinding.ActivityHouseRenterBinding
+import com.example.roombti.databinding.ActivityIntroBinding
 
-class CommonActivity : AppCompatActivity() {
+class HouseRenterActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityCommonBinding
+    private lateinit var binding: ActivityHouseRenterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCommonBinding.inflate(layoutInflater)
+        binding = ActivityHouseRenterBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         enableEdgeToEdge()
@@ -26,13 +26,7 @@ class CommonActivity : AppCompatActivity() {
         }
     }
 
-    fun looking_roommate(view: View) {
-        val intent = Intent(this, HouseRenterActivity::class.java)
-        startActivity(intent)
-    }
+    fun house_renter_next(view: View) {
 
-    fun looking_home(view: View) {
-        val intent = Intent(this, HomeSeekerActivity::class.java)
-        startActivity(intent)
     }
 }

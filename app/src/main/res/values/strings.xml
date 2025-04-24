@@ -35,4 +35,8 @@
     <string name="now_text">now</string>
     <string name="max_text">max</string>
     <string name="city_mun_text">city, municipality</string>
+
+    <string name="roombti">RooMBTI</string>
+    <string name="main_roommates_filter_text">Filter</string>
+    <string name="main_roommates_sort_text">Sort</string>
 </resources>
