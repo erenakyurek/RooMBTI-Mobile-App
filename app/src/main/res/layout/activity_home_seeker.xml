@@ -40,16 +40,14 @@
         />
 
     <View
-        android:id="@+id/mbti_rect"
+        android:id="@+id/houserenter_rect"
         android:layout_width="376dp"
         android:layout_height="553dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp"
-        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="173dp"
-        android:layout_marginBottom="191dp"
-        android:background="@drawable/mbti_rect"
-        android:gravity="center" />
+        android:background="@drawable/houserenter_rect"
+        />
+
 
 
 
@@ -58,54 +56,56 @@
         android:id="@+id/no_of_housemates"
         android:layout_width="195dp"
         android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="213dp"
-        android:text="@string/no_of_housemates"
-        android:textAppearance="@style/homeseeker_info_theme"
+        android:text="@string/number_of_housemate_text"
+        android:textAppearance="@style/register_text_theme"
         android:gravity="center_vertical"
         />
 
     <EditText
-        android:id="@+id/housemate_small_1"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="248dp"
+        android:id="@+id/seeker_housemate_now_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="248dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="195dp"
 
-        android:hint="@string/seeker_housemate_no_min"
-        android:textColorHint="@color/light_gray"
-        android:textAppearance="@style/seeker_renter_intermediate_ghost"
+        android:hint="@string/now_text"
+        android:textColorHint="@color/ghost_gray"
+        android:textAppearance="@style/register_text_theme"
         android:inputType="text"
         android:singleLine="true"
 
         android:gravity="start|center_vertical"
         android:textAlignment="viewStart"
-        android:padding="10dp"
+        android:padding="11dp"
 
         android:background="@drawable/seeker_renter_small_edit"
         />
     <EditText
-        android:id="@+id/housemate_small_2"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="317dp"
+        android:id="@+id/seeker_housemate_max_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="317dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="195dp"
 
-        android:hint="@string/seeker_housemate_no_max"
-        android:textColorHint="@color/light_gray"
-        android:textAppearance="@style/seeker_renter_intermediate_ghost"
+        android:hint="@string/max_text"
+        android:textColorHint="@color/ghost_gray"
+        android:textAppearance="@style/register_text_theme"
         android:inputType="text"
         android:singleLine="true"
 
         android:gravity="start|center_vertical"
         android:textAlignment="viewStart"
-        android:padding="10dp"
+        android:padding="11dp"
 
         android:background="@drawable/seeker_renter_small_edit"
         />
@@ -117,33 +117,35 @@
         android:id="@+id/seeker_location"
         android:layout_width="73dp"
         android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="287dp"
-        android:text="@string/location"
-        android:textAppearance="@style/homeseeker_info_theme"
+        android:text="@string/location_text"
+        android:textAppearance="@style/register_text_theme"
         android:gravity="center_vertical"
         />
 
     <EditText
-        android:id="@+id/seeker_location_info"
-        android:layout_width="247dp"
-        android:layout_height="56dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="126dp"
+        android:id="@+id/seeker_location_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="@string/city_mun_text"
+        android:textColorHint="@color/ghost_gray"
+        android:textAppearance="@style/register_text_theme"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="126dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="269dp"
 
-        android:hint="@string/seeker_location_ghost"
-        android:textColorHint="@color/light_gray"
-        android:textAppearance="@style/seeker_renter_intermediate_ghost"
-        android:inputType="text"
-        android:singleLine="true"
 
         android:gravity="start|center_vertical"
         android:textAlignment="viewStart"
-        android:padding="10dp"
+        android:padding="18dp"
 
         android:background="@drawable/seeker_renter_big_edit"
 
@@ -156,55 +158,56 @@
         android:id="@+id/seeker_budget"
         android:layout_width="65dp"
         android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="361dp"
-        android:text="@string/budget"
-        android:textAppearance="@style/homeseeker_info_theme"
+        android:text="@string/budget_text"
+        android:textAppearance="@style/register_text_theme"
         android:gravity="center_vertical"
         />
 
     <EditText
-        android:id="@+id/housemate_small_3"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="118dp"
+        android:id="@+id/houseseeker_min_budget_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="118dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="343dp"
 
-        android:hint="@string/seeker_housemate_no_min"
-        android:textColorHint="@color/light_gray"
-        android:textAppearance="@style/seeker_renter_intermediate_ghost"
+        android:hint="@string/min_text"
+        android:textColorHint="@color/ghost_gray"
+        android:textAppearance="@style/register_text_theme"
         android:inputType="text"
         android:singleLine="true"
 
         android:gravity="start|center_vertical"
         android:textAlignment="viewStart"
-        android:padding="10dp"
+        android:padding="11dp"
 
         android:background="@drawable/seeker_renter_small_edit"
         />
 
     <EditText
-        android:id="@+id/housemate_small_4"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="187dp"
+        android:id="@+id/houseseeker_max_budget_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="187dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="343dp"
 
-        android:hint="@string/seeker_housemate_no_max"
-        android:textColorHint="@color/light_gray"
-        android:textAppearance="@style/seeker_renter_intermediate_ghost"
+        android:hint="@string/max_text"
+        android:textColorHint="@color/ghost_gray"
+        android:textAppearance="@style/register_text_theme"
         android:inputType="text"
         android:singleLine="true"
 
         android:gravity="start|center_vertical"
         android:textAlignment="viewStart"
-        android:padding="10dp"
+        android:padding="11dp"
 
         android:background="@drawable/seeker_renter_small_edit"
         />
@@ -217,12 +220,12 @@
         android:id="@+id/seeker_smoker"
         android:layout_width="118dp"
         android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="435dp"
-        android:text="@string/smoker_info"
-        android:textAppearance="@style/homeseeker_info_theme"
+        android:text="@string/seeker_smoke_text"
+        android:textAppearance="@style/register_text_theme"
         android:gravity="center_vertical"
         />
 
@@ -232,30 +235,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="171dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="171dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="430dp">
 
 
         <RadioButton
-            android:id="@+id/radio_smoke_yes"
+            android:id="@+id/houseseeker_smoke_yes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layoutDirection="rtl"
-            android:text="Yes"
-            android:textAppearance="@style/mbti_test_text_theme"
-            android:buttonTint="#337CFF" />
+            android:text="@string/yes_text"
+            android:textAppearance="@style/register_text_theme"
+            android:buttonTint="#0C33FF" />
 
         <RadioButton
-            android:id="@+id/radio_smoke_no"
+            android:id="@+id/houseseeker_smoke_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layoutDirection="rtl"
-            android:text="No"
-            android:textAppearance="@style/mbti_test_text_theme"
+            android:text="@string/no_text"
+            android:textAppearance="@style/register_text_theme"
             android:layout_marginStart="16dp"
-            android:buttonTint="#337CFF" />
+            android:buttonTint="#0C33FF" />
     </RadioGroup>
 
     <!--**************************************************************************-->
@@ -266,12 +269,12 @@
         android:id="@+id/seeker_pet"
         android:layout_width="148dp"
         android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="508dp"
-        android:text="@string/pet_info"
-        android:textAppearance="@style/homeseeker_info_theme"
+        android:text="@string/seeker_pet_text"
+        android:textAppearance="@style/register_text_theme"
         android:gravity="center_vertical"
         />
 
@@ -281,29 +284,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="201dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="201dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="503dp">
 
         <RadioButton
-            android:id="@+id/radio_pet_yes"
+            android:id="@+id/houseseeker_pet_yes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layoutDirection="rtl"
             android:textAppearance="@style/mbti_test_text_theme"
-            android:text="Yes"
-            android:buttonTint="#337CFF" />
+            android:text="@string/yes_text"
+            android:buttonTint="#0C33FF" />
 
         <RadioButton
-            android:id="@+id/radio_pet_no"
+            android:id="@+id/houseseeker_pet_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layoutDirection="rtl"
             android:textAppearance="@style/mbti_test_text_theme"
-            android:text="No"
+            android:text="@string/no_text"
             android:layout_marginStart="16dp"
-            android:buttonTint="#337CFF" />
+            android:buttonTint="#0C33FF" />
     </RadioGroup>
 
 
@@ -316,32 +319,32 @@
         android:id="@+id/seeker_university"
         android:layout_width="83dp"
         android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="582dp"
-        android:text="@string/uni_info"
-        android:textAppearance="@style/homeseeker_info_theme"
+        android:text="@string/university_text"
+        android:textAppearance="@style/register_text_theme"
         android:gravity="center_vertical"
         />
     <EditText
-        android:id="@+id/seeker_uni_info_ghost"
-        android:layout_width="237dp"
-        android:layout_height="56dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="136dp"
+        android:id="@+id/houseseeker_university_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="136dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="564dp"
 
-        android:hint="@string/seeker_uni_ghost"
-        android:textColorHint="@color/light_gray"
-        android:textAppearance="@style/seeker_renter_intermediate_ghost"
+        android:hint="@string/optional_text"
+        android:textColorHint="@color/ghost_gray"
+        android:textAppearance="@style/register_text_theme"
         android:inputType="text"
         android:singleLine="true"
 
         android:gravity="start|center_vertical"
         android:textAlignment="viewStart"
-        android:padding="10dp"
+        android:padding="18dp"
 
         android:background="@drawable/seeker_renter_big_edit"
         />
@@ -349,16 +352,16 @@
     <!--**************************************************************************-->
 
     <Button
-        android:id="@+id/rectangle_7"
+        android:id="@+id/houserenter_next_button"
         android:layout_width="154dp"
         android:layout_height="39dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="126dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="650dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="672dp"
         android:background="@drawable/mbti_next_button"
-        android:text="@string/next_text"
-        android:textAppearance="@style/next_text_theme"
         android:gravity="center"
-        />
+        android:onClick="house_renter_next"
+        android:text="@string/next_text"
+        android:textAppearance="@style/next_text_theme" />
+
+
 </RelativeLayout>
