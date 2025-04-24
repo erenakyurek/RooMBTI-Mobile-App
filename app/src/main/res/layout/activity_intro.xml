@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager"/>
+
+    <View
+        android:id="@+id/gradient"
+        android:layout_width="644dp"
+        android:layout_height="610dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/gradient"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/roombtiLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="74dp"
+        android:text="@string/roombtiLogo_text"
+        android:textAppearance="@style/roombtiLogo_text_theme"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="136dp"
+        android:text="@string/slogan_text"
+        android:textAppearance="@style/slogan_text_theme"
+        android:gravity="center"
+        />
+
+    <View
+        android:id="@+id/login_rect"
+        android:layout_width="376dp"
+        android:layout_height="469dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="224dp"
+        android:background="@drawable/login_rect"
+        android:gravity="center"
+
+        />
+
+    <TextView
+        android:id="@+id/hello_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="315dp"
+        android:text="@string/hello_text"
+        android:textAppearance="@style/hello_text_theme"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:text="@string/welcome_login_text"
+        android:textAppearance="@style/welcome_text_theme"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/login_button_blue"
+        android:layout_width="154dp"
+        android:layout_height="39dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="549dp"
+        android:background="@drawable/login_button_blue"
+        android:text="@string/login_text"
+        android:textAppearance="@style/login_text_theme"
+        android:gravity="center"
+        />
+
+    <!--
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="52dp"
+        android:layout_height="22dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="557dp"
+        android:text="@string/login_text"
+        android:textAppearance="@style/login_text_theme"
+        android:gravity="center"
+        />
+
+    -->
+
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <Button
+        android:id="@+id/register_button_white"
+        android:layout_width="154dp"
+        android:layout_height="39dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="606dp"
+        android:background="@drawable/register_button_white"
+        android:text="@string/sign_up_text"
+        android:textAppearance="@style/sign_up_text_theme"
+        android:gravity="center"
+        />
+
+    <!--
+    <TextView
+        android:id="@+id/sign_up_text"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="614dp"
+        android:text="@string/sign_up_text"
+        android:textAppearance="@style/sign_up_text_theme"
+        android:gravity="center"
+        />
+    -->
+
+</RelativeLayout>

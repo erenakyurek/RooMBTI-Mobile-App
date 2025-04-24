@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">RooMBTI</string>
+    <string name="login_text">Login</string>
+    <string name="sign_up_text">Sign up</string>
+    <string name="roombtiLogo_text">RooMBTI</string>
+    <string name="slogan_text">Find a roommate for your MBTI type.</string>
+    <string name="welcome_login_text">Welcome to RooMBTI,\nwhere you can find the perfect\nroommate or place for you.</string>
+    <string name="hello_text">Hello!</string>
+    <string name="next_text">Next</string>
+    <string name="welcome_mbti_text">Welcome!</string>
+    <string name="select_mbti_text_plain">Please select your MBTI type 😊</string>
+    <string name="mbti_test_link_text">If you don\'t know your personality type,\nyou can click here to take the test\nand find out your type.</string>
+    <string name="upload_text">Upload</string>
+    <string name="register_name_ghost">Name</string>
+    <string name="register_surname_ghost">Surname</string>
+    <string name="register_gender_ghost">Gender</string>
+    <string name="register_age_ghost">Age</string>
+    <string name="register_email_ghost">Email</string>
+    <string name="register_password_ghost">Password</string>
+
+</resources>

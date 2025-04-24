@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mbti_selection"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/gradient"
+        android:layout_width="wrap_content"
+        android:layout_height="610dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/gradient"
+        />
+
+    <TextView
+        android:id="@+id/roombtiLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:text="@string/roombtiLogo_text"
+        android:textAppearance="@style/roombtiLogo_text_theme"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="109dp"
+        android:text="@string/slogan_text"
+        android:textAppearance="@style/slogan_text_theme"
+        android:gravity="center"
+        />
+
+    <View
+        android:id="@+id/mbti_rect"
+        android:layout_width="376dp"
+        android:layout_height="574dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="173dp"
+        android:background="@drawable/mbti_rect"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/welcome_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="264dp"
+        android:text="@string/welcome_mbti_text"
+        android:textAppearance="@style/hello_text_theme"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/select_mbti_text_plain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="318dp"
+        android:text="@string/select_mbti_text_plain"
+        android:textAppearance="@style/welcome_text_theme"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/mbti_test_link_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="526dp"
+        android:text="@string/mbti_test_link_text"
+        android:textAppearance="@style/mbti_test_text_theme"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/mbti_next_button"
+        android:layout_width="154dp"
+        android:layout_height="39dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="672dp"
+        android:background="@drawable/mbti_next_button"
+        android:text="@string/next_text"
+        android:textAppearance="@style/next_text_theme"
+        android:gravity="center"
+        />
+
+    <!--
+    <TextView
+        android:id="@+id/next_mbti_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="680dp"
+        android:text="@string/next_text"
+        android:textAppearance="@style/next_text_theme"
+        android:gravity="center"
+        />
+
+    -->
+
+
+
+</RelativeLayout>
