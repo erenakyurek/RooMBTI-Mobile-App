@@ -35,7 +35,7 @@ class IntroActivity : AppCompatActivity() {
     }
 
     fun login_intro(view : View) {
-        val intent = Intent(this, MBTISelectionActivity::class.java)
+        val intent = Intent(this, LoginPageActivity::class.java)
         startActivity(intent)
     }
 }
