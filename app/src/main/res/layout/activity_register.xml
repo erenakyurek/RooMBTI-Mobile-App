@@ -211,7 +211,7 @@
         android:layout_marginStart="112dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="191dp"
-        android:src="@drawable/profile_pic">
+        android:src="@drawable/bar_photo">
 
     </ImageView>
 

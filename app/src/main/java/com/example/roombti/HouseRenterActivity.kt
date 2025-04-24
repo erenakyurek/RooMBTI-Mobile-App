@@ -1,5 +1,6 @@
 package com.example.roombti
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -27,6 +28,7 @@ class HouseRenterActivity : AppCompatActivity() {
     }
 
     fun house_renter_next(view: View) {
-
+        val intent = Intent(this, MainRoommatesActivity::class.java)
+        startActivity(intent)
     }
 }

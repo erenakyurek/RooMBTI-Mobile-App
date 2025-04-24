@@ -139,4 +139,15 @@
         <item name="android:fontFamily">@font/montserrat_regular</item>
     </style>
 
+
+    <style name="name">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+    <style name="mbti_type">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
 </resources>
