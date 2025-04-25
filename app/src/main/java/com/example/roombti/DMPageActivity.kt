@@ -27,5 +27,8 @@ class DMPageActivity : AppCompatActivity() {
             insets
         }
     }
-
+    fun open_menu(view: View) {
+        val intent = Intent(this, MenuScreenActivity::class.java)
+        startActivity(intent)
+    }
 }

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.roombti.databinding.ActivityMainRoommatesBinding
+import com.example.roombti.databinding.ActivityMenuScreenBinding
 
 class MainRoommatesActivity : AppCompatActivity() {
 
@@ -28,6 +29,10 @@ class MainRoommatesActivity : AppCompatActivity() {
     }
     fun open_person(view: View) {
         val intent = Intent(this, PersonInspectActivity::class.java)
+        startActivity(intent)
+    }
+    fun open_menu(view: View) {
+        val intent = Intent(this, MenuScreenActivity::class.java)
         startActivity(intent)
     }
 }

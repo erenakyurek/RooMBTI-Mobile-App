@@ -57,6 +57,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="42dp"
         android:background="@drawable/menu_option"
+        android:onClick="open_menu"
         />
 
     <View

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.roombti.databinding.ActivityMainRoommatesBinding
+import com.example.roombti.databinding.ActivityMenuScreenBinding
 import com.example.roombti.databinding.ActivityRoomInspectBinding
 
 class RoomInspectActivity : AppCompatActivity() {
@@ -28,6 +29,10 @@ class RoomInspectActivity : AppCompatActivity() {
     }
     fun open_chat(view: View) {
         val intent = Intent(this, DMPageActivity::class.java)
+        startActivity(intent)
+    }
+    fun open_menu(view: View) {
+        val intent = Intent(this, MenuScreenActivity::class.java)
         startActivity(intent)
     }
 }
