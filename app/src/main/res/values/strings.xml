@@ -68,4 +68,10 @@
     <string name="ersin_kara">Ersin KARA</string>
     <string name="room_inspect_phone_num">+90 (555) 420 13-12</string>
     <string name="text_here">Text here...</string>
+    <string name="slide_edit_profile">Edit Profile</string>
+    <string name="slide_message">Message</string>
+    <string name="slide_settings">Settings</string>
+    <string name="slide_log_out">Log out</string>
+    <string name="slide_slogan">Find a roommate for your type.</string>
+    <string name="app_version">App version: 1.0</string>
 </resources>

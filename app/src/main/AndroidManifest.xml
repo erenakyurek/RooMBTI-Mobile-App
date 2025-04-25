@@ -25,6 +25,9 @@
             android:name=".DMPageActivity"
             android:exported="false" />
         <activity
+            android:name=".MenuScreen"
+            android:exported="false" />
+        <activity
             android:name=".MainRoommatesActivity"
             android:exported="false" />
         <activity
