@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="18dp"
+    android:layout_marginRight="18dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/room1_info"
+    >
+
+    <!-- Ev fotoğrafı -->
+    <ImageView
+        android:id="@+id/imageViewHouse"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/room1" />
+
+    <!-- Lokasyon ikonu ve metni -->
+    <ImageView
+        android:id="@+id/imageViewLocationIcon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_below="@id/imageViewHouse"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/location_icon" />
+
+    <TextView
+        android:id="@+id/textViewLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewHouse"
+        android:layout_toRightOf="@id/imageViewLocationIcon"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="8dp"
+        android:text="Istanbul, Ataşehir"
+        android:textAppearance="@style/city_name" />
+
+    <!-- Kişi ikonu ve sayısı -->
+    <ImageView
+        android:id="@+id/imageViewPersonIcon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_below="@id/imageViewHouse"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/textViewLocation"
+        android:layout_marginLeft="32dp"
+        android:src="@drawable/person_icon" />
+
+    <TextView
+        android:id="@+id/textViewPersonCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewHouse"
+        android:layout_toRightOf="@id/imageViewPersonIcon"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="8dp"
+        android:text="3/4"
+        android:textAppearance="@style/city_name" />
+
+    <!-- Fiyat ve TL simgesi -->
+    <TextView
+        android:id="@+id/textViewPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewHouse"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="3,850"
+        android:textAppearance="@style/city_name" />
+
+    <TextView
+        android:id="@+id/textViewTL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewHouse"
+        android:layout_toLeftOf="@id/textViewPrice"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="8dp"
+        android:text="₺"
+        android:textAppearance="@style/turkish_lira" />
+
+    <TextView
+        android:id="@+id/textViewPerPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewHouse"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="28dp"
+        android:text="/person"
+        android:textAppearance="@style/city_name" />
+
+</RelativeLayout> 
