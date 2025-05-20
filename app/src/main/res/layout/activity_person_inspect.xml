@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,10 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PersonInspectActivity"
-    android:orientation="vertical"
-    android:fitsSystemWindows="false"
-    >
-
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/roombtiLogo"
@@ -57,7 +53,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="42dp"
         android:background="@drawable/menu_option"
-        android:onClick="open_menu"
         />
 
     <View
@@ -222,7 +217,7 @@
         />
 
     <TextView
-        android:id="@+id/uni_info"
+        android:id="@+id/yeditepe_un"
         android:layout_width="97dp"
         android:layout_height="12dp"
         android:layout_alignParentLeft="true"
@@ -310,7 +305,7 @@
         android:textAppearance="@style/person_inspect_text"
         android:gravity="center_vertical"
         />
-     <View
+    <View
         android:id="@+id/male_icon"
         android:layout_width="24.69dp"
         android:layout_height="23.38dp"
@@ -332,5 +327,4 @@
         android:textAppearance="@style/person_inspect_text"
         android:gravity="center_vertical"
         />
-
 </RelativeLayout>

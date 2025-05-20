@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "125025378031",
+    "project_id": "roombti",
+    "storage_bucket": "roombti.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125025378031:android:c78f86569dd06dc279c51a",
+        "android_client_info": {
+          "package_name": "com.example.roombti"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr4PFVk-nabvRHbwem4n5PF8M0Aa5SHGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
