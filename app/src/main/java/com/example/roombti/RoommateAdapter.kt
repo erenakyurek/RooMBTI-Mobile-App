@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RoommateAdapter(private val userList: List<User>, private val onItemClick: (User) -> Unit) :
+class RoommateAdapter(private val userList: List<UserData>, private val onItemClick: (UserData) -> Unit) :
     RecyclerView.Adapter<RoommateAdapter.RoommateViewHolder>() {
 
     class RoommateViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -23,8 +23,8 @@ class RoommateAdapter(private val userList: List<User>, private val onItemClick:
 
     override fun onBindViewHolder(holder: RoommateViewHolder, position: Int) {
         val user = userList[position]
-        holder.textViewName.text = user.name
-        holder.textViewMbti.text = user.mbti
+        holder.textViewName.text = user.name ?: "-"
+        holder.textViewMbti.text = user.mbti ?: "-"
         // Arka plan rengi/drawable (örnek: MBTI'ye göre)
         val profileBar = holder.itemView.findViewById<View>(R.id.profile_bar)
         when (user.mbti) {

@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.roombti.databinding.ActivityMainHousesBinding
 
 class MainHousesActivity : AppCompatActivity() {
 
@@ -28,16 +29,15 @@ class MainHousesActivity : AppCompatActivity() {
         val recyclerView = binding.recyclerViewHouses
         recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
 
-        // Örnek houseMap (gerçek uygulamada veritabanından gelecek)
-        val houseMap = mapOf(
-            "1" to House("1", R.drawable.room1, "Istanbul, Atasehir", 4, 3, 3850),
-            "2" to House("2", R.drawable.room2, "Istanbul, Kadikoy", 3, 1, 6800),
-            "3" to House("3", R.drawable.room3, "Izmir, Bornova", 2, 2, 4200)
+        // Örnek userList (userType = "home" olanlar)
+        val userList = listOf(
+            UserData(id = "1", name = "Ev Sahibi 1", userType = "home", location = "Istanbul, Atasehir", totalHousemates = 4, currentHousemates = 3, rentPerPerson = 3850, photos = listOf()),
+            UserData(id = "2", name = "Ev Sahibi 2", userType = "home", location = "Istanbul, Kadikoy", totalHousemates = 3, currentHousemates = 1, rentPerPerson = 6800, photos = listOf()),
+            UserData(id = "3", name = "Ev Sahibi 3", userType = "home", location = "Izmir, Bornova", totalHousemates = 2, currentHousemates = 2, rentPerPerson = 4200, photos = listOf())
         )
-        val houseList = houseMap.values.toList()
-        recyclerView.adapter = HouseAdapter(houseList) { house ->
+        recyclerView.adapter = HouseAdapter(userList) { user ->
             val intent = Intent(this, RoomInspectActivity::class.java)
-            intent.putExtra("house", house)
+            intent.putExtra("user", user)
             startActivity(intent)
         }
     }

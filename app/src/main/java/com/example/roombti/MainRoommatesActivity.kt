@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roombti.databinding.ActivityMainRoommatesBinding
 
 class MainRoommatesActivity : AppCompatActivity() {
@@ -28,21 +29,20 @@ class MainRoommatesActivity : AppCompatActivity() {
 
         // --- RecyclerView ve Adapter entegrasyonu ---
         val recyclerView = binding.recyclerViewRoommates
-        recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Örnek userMap (gerçek uygulamada veritabanından gelecek)
         val userMap = mapOf(
-            "1" to User("1", "Tuba Selen A.", "ESTJ", "female", null, 22, "Yeditepe University", "Istanbul, Ataşehir", false, false),
-            "2" to User("2", "Eren Akyürek", "INTP", "male", null, 23, "Boğaziçi University", "Istanbul, Beşiktaş", true, false),
-            "3" to User("3", "Can Sarper D.", "ENTJ", "male", null, 24, "ODTÜ", "Ankara, Çankaya", false, true),
-            "4" to User("4", "Belma Soysal", "ESTP", "female", null, 21, "İTÜ", "Istanbul, Maslak", true, true),
-            "5" to User("5", "Beril Güler", "INFJ", "female", null, 22, "Yeditepe University", "Istanbul, Ataşehir", false, false),
-            "6" to User("6", "Hasan G.", "ISFJ", "male", null, 25, "Hacettepe University", "Ankara, Sıhhiye", false, false),
-            "7" to User("7", "Enes Deniz", "ISFP", "male", null, 23, "Ege University", "Izmir, Bornova", true, true),
-            "8" to User("8", "Doğu Baha A.", "ENFJ", "male", null, 22, "Yeditepe University", "Istanbul, Ataşehir", false, false)
+            "1" to UserData(id = "1", name = "Tuba Selen A.", userType = "roommate", mbti = "ESTJ", gender = "female", age = 22, location = "Istanbul, Ataşehir", allowPets = false, allowSmoking = false),
+            "2" to UserData(id = "2", name = "Eren Akyürek", userType = "roommate", mbti = "INTP", gender = "male", age = 23, location = "Istanbul, Beşiktaş", allowPets = true, allowSmoking = false),
+            "3" to UserData(id = "3", name = "Can Sarper D.", userType = "roommate", mbti = "ENTJ", gender = "male", age = 24, location = "Ankara, Çankaya", allowPets = false, allowSmoking = true),
+            "6" to UserData(id = "6", name = "Hasan G.", userType = "roommate", mbti = "ISFJ", gender = "male", age = 25, location = "Ankara, Sıhhiye", allowPets = false, allowSmoking = false),
+            "7" to UserData(id = "7", name = "Enes Deniz", userType = "roommate", mbti = "ISFP", gender = "male", age = 23, location = "Izmir, Bornova", allowPets = true, allowSmoking = true),
+            "8" to UserData(id = "8", name = "Doğu Baha A.", userType = "roommate", mbti = "ENFJ", gender = "male", age = 22, location = "Istanbul, Ataşehir", allowPets = false, allowSmoking = false)
         )
-        val userList = userMap.values.toList()
-        recyclerView.adapter = RoommateAdapter(userList) { user ->
+
+        val filteredList = userMap.values.filter { it.userType == "roommate" }
+        recyclerView.adapter = RoommateAdapter(filteredList) { user ->
             val intent = Intent(this, PersonInspectActivity::class.java)
             intent.putExtra("user", user)
             startActivity(intent)

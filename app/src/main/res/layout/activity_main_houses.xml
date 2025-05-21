@@ -1,113 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainRoommatesActivity">
+    <!-- background eklenecek-->
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/main"
+    <Button
+        android:id="@+id/profile_pic_main"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bar_photo"/>
+        <!--android:onClick="open_profile"-->
+        <!--  profil fotosu-->
+
+    <TextView
+        android:id="@+id/roombti"
+        android:layout_width="110dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="151dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:text="@string/roombti"
+        android:textAppearance="@style/roombti"
+        android:gravity="center_horizontal|center_vertical"
+        />
+
+    <Button
+        android:id="@+id/menu_option"
+        android:layout_width="32dp"
+        android:layout_height="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="356dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/menu_bar"
+        android:onClick="open_menu"
+        /> <!-- menu bar fotosu-->
+
+    <View
+        android:id="@+id/main_roommates_filter_button"
+        android:layout_width="85dp"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="114dp"
+        android:background="@drawable/main_roommates_filter_button"
+        />
+
+    <TextView
+        android:id="@+id/main_roommates_filter_text"
+        android:layout_width="47dp"
+        android:layout_height="22dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="39dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="120dp"
+        android:text="@string/main_roommates_filter_text"
+        android:textAppearance="@style/main_roommates_filter_text"
+        android:gravity="center_horizontal|center_vertical"
+        />
+
+    <View
+        android:id="@+id/main_roommates_sort_button"
+        android:layout_width="85dp"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="311dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="114dp"
+        android:background="@drawable/main_roommates_sort_button"
+        />
+
+    <TextView
+        android:id="@+id/main_roommates_sort_text"
+        android:layout_width="38dp"
+        android:layout_height="22dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="334dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="120dp"
+        android:text="@string/main_roommates_sort_text"
+        android:textAppearance="@style/main_roommates_sort_text"
+        android:gravity="center_horizontal|center_vertical"
+        />
+
+    <!-- Ev kartlarının listelendiği dinamik alan -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHouses"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainRoommatesActivity">
-        <!-- background eklenecek-->
-
-        <Button
-            android:id="@+id/profile_pic_main"
-            android:layout_width="58dp"
-            android:layout_height="58dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="24dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/bar_photo"/>
-            <!--android:onClick="open_profile"-->
-            <!--  profil fotosu-->
-
-        <TextView
-            android:id="@+id/roombti"
-            android:layout_width="110dp"
-            android:layout_height="29dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="151dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="40dp"
-            android:text="@string/roombti"
-            android:textAppearance="@style/roombti"
-            android:gravity="center_horizontal|center_vertical"
-            />
-
-        <Button
-            android:id="@+id/menu_option"
-            android:layout_width="32dp"
-            android:layout_height="19dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="356dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="42dp"
-            android:background="@drawable/menu_bar"
-            android:onClick="open_menu"
-            /> <!-- menu bar fotosu-->
-
-        <View
-            android:id="@+id/main_roommates_filter_button"
-            android:layout_width="85dp"
-            android:layout_height="33dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="114dp"
-            android:background="@drawable/main_roommates_filter_button"
-            />
-
-        <TextView
-            android:id="@+id/main_roommates_filter_text"
-            android:layout_width="47dp"
-            android:layout_height="22dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="39dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="120dp"
-            android:text="@string/main_roommates_filter_text"
-            android:textAppearance="@style/main_roommates_filter_text"
-            android:gravity="center_horizontal|center_vertical"
-            />
-
-        <View
-            android:id="@+id/main_roommates_sort_button"
-            android:layout_width="85dp"
-            android:layout_height="33dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="311dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="114dp"
-            android:background="@drawable/main_roommates_sort_button"
-            />
-
-        <TextView
-            android:id="@+id/main_roommates_sort_text"
-            android:layout_width="38dp"
-            android:layout_height="22dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="334dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="120dp"
-            android:text="@string/main_roommates_sort_text"
-            android:textAppearance="@style/main_roommates_sort_text"
-            android:gravity="center_horizontal|center_vertical"
-            />
-
-        <!-- Ev kartlarının listelendiği dinamik alan -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewHouses"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/main_roommates_sort_text"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="24dp"/>
-    </RelativeLayout>
-</ScrollView>
+        android:layout_below="@id/main_roommates_sort_text"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="24dp"/>
+</RelativeLayout>

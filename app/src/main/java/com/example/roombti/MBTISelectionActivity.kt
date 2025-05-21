@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -27,10 +28,16 @@ class MBTISelectionActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        binding.mbtiNextButton.setOnClickListener {
+            val registerMbti = binding.mbtiDropdownInput.selectedItem?.toString().orEmpty()
+            if (registerMbti.isNotEmpty() && registerMbti != "Select") {
+                val intent = Intent(this, RegisterActivity::class.java).putExtra("registerMbti", registerMbti)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this@MBTISelectionActivity, "Please select your MBTI type.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
-    fun next_register(view: View) {
-        val intent = Intent(this, RegisterActivity::class.java)
-        startActivity(intent)
-    }
 }

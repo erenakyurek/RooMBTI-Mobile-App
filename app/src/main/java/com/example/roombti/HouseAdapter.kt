@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class HouseAdapter(
-    private val houseList: List<House>,
-    private val onItemClick: (House) -> Unit
+    private val userList: List<UserData>,
+    private val onItemClick: (UserData) -> Unit
 ) : RecyclerView.Adapter<HouseAdapter.HouseViewHolder>() {
 
     class HouseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -26,13 +26,15 @@ class HouseAdapter(
     }
 
     override fun onBindViewHolder(holder: HouseViewHolder, position: Int) {
-        val house = houseList[position]
-        holder.imageViewHouse.setImageResource(house.imageResId)
-        holder.textViewLocation.text = house.location
-        holder.textViewPersonCount.text = "${house.currentPersonCount}/${house.capacity}"
-        holder.textViewPrice.text = String.format("%,d", house.price)
-        holder.itemView.setOnClickListener { onItemClick(house) }
+        val user = userList[position]
+        // Fotoğraf (ilk fotoğraf varsa)
+        val photoResId = user.photos?.firstOrNull()?.toIntOrNull() ?: R.drawable.room1
+        holder.imageViewHouse.setImageResource(photoResId)
+        holder.textViewLocation.text = user.location ?: "-"
+        holder.textViewPersonCount.text = "${user.currentHousemates ?: 0}/${user.totalHousemates ?: 0}"
+        holder.textViewPrice.text = user.rentPerPerson?.let { String.format("%,d", it) } ?: "-"
+        holder.itemView.setOnClickListener { onItemClick(user) }
     }
 
-    override fun getItemCount() = houseList.size
+    override fun getItemCount() = userList.size
 } 

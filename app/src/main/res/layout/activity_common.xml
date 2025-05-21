@@ -89,7 +89,7 @@
             />
 
         <Button
-            android:id="@+id/roommate_select_button"
+            android:id="@+id/looking_roommate_select_button"
             android:layout_width="280dp"
             android:layout_height="39dp"
             android:layout_centerHorizontal="true"
@@ -98,11 +98,10 @@
             android:gravity="center"
             android:onClick="looking_roommate"
             android:text="@string/roommate_select_text"
-            android:textAppearance="@style/roommate_select_theme"
-            />
+            android:textAppearance="@style/roommate_select_theme"/>
 
         <Button
-            android:id="@+id/home_select_button"
+            android:id="@+id/looking_home_select_button"
             android:layout_width="280dp"
             android:layout_height="39dp"
             android:layout_centerHorizontal="true"
@@ -111,8 +110,7 @@
             android:gravity="center"
             android:onClick="looking_home"
             android:text="@string/home_select_text"
-            android:textAppearance="@style/home_select_theme"
-            />
+            android:textAppearance="@style/home_select_theme"/>
 
     </RelativeLayout>
 </ScrollView>
