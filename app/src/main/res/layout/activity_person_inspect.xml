@@ -217,7 +217,7 @@
         />
 
     <TextView
-        android:id="@+id/yeditepe_un"
+        android:id="@+id/uni_info"
         android:layout_width="97dp"
         android:layout_height="12dp"
         android:layout_alignParentLeft="true"

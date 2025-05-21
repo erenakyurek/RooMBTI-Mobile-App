@@ -41,12 +41,4 @@ class MainHousesActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    fun open_house(view: View) {
-        val intent = Intent(this, RoomInspectActivity::class.java)
-        startActivity(intent)
-    }
-    fun open_menu(view: View) {
-        val intent = Intent(this, MenuScreenActivity::class.java)
-        startActivity(intent)
-    }
 }

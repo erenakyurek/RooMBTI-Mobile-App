@@ -26,6 +26,12 @@ class RoomInspectActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Set user name dynamically
+        val user = intent.getSerializableExtra("user") as? UserData
+        user?.let {
+            binding.ersinKara.text = it.name ?: ""
+        }
     }
     fun open_chat(view: View) {
         val intent = Intent(this, DMPageActivity::class.java)
