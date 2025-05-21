@@ -98,8 +98,7 @@
             android:gravity="center"
             android:onClick="looking_roommate"
             android:text="@string/roommate_select_text"
-            android:textAppearance="@style/roommate_select_theme"
-            />
+            android:textAppearance="@style/roommate_select_theme"/>
 
         <Button
             android:id="@+id/looking_home_select_button"
@@ -111,8 +110,7 @@
             android:gravity="center"
             android:onClick="looking_home"
             android:text="@string/home_select_text"
-            android:textAppearance="@style/home_select_theme"
-            />
+            android:textAppearance="@style/home_select_theme"/>
 
     </RelativeLayout>
 </ScrollView>

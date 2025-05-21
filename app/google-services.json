@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "125025378031",
+    "firebase_url": "https://roombti-default-rtdb.firebaseio.com",
     "project_id": "roombti",
     "storage_bucket": "roombti.firebasestorage.app"
   },

@@ -1,5 +1,7 @@
 package com.example.roombti
 
+import java.io.Serializable
+
 data class UserData(
     val id: String? = null,
     val name: String? = null,
@@ -25,4 +27,4 @@ data class UserData(
     val totalHousemates: Int?   = null,
     val rentPerPerson: Int?     = null,
     val photos: List<String>?   = null  // URLs after uploading to Storage
-)
+) : Serializable 

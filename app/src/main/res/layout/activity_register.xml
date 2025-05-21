@@ -115,25 +115,16 @@
             android:padding="18dp"
             />
 
-        <EditText
+        <Spinner
             android:id="@+id/register_Gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:hint="@string/register_gender_ghost"
-            android:textColorHint="@color/app_blue"
-            android:textAppearance="@style/register_text_theme"
-            android:inputType="text"
-            android:singleLine="true"
-
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="436dp"
             android:background="@drawable/register_text_area"
-
-            android:gravity="start|center_vertical"
-            android:textAlignment="viewStart"
             android:padding="18dp"
+            android:spinnerMode="dropdown"
             />
 
         <EditText

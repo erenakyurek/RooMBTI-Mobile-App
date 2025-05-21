@@ -60,16 +60,53 @@
             android:background="@drawable/room_inspect_big_photo_frame"
             />
 
-        <View
-            android:id="@+id/room_inspect_house_big_photo"
+        <!-- Büyük fotoğraf yerine kaydırmalı galeri (ViewPager2) -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerPhotos"
             android:layout_width="376dp"
             android:layout_height="251dp"
             android:layout_alignParentStart="true"
             android:layout_marginStart="18dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="143dp"
-            android:background="@drawable/house_big"
+            android:background="@android:color/transparent"/>
+
+        <!-- Küçük fotoğrafların yatay kaydırmalı galerisi -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewThumbnails"
+            android:layout_width="376dp"
+            android:layout_height="64dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_below="@id/viewPagerPhotos"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
             />
+
+        <!-- Sol geçiş butonu -->
+        <ImageButton
+            android:id="@+id/buttonPrevPhoto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@id/viewPagerPhotos"
+            android:layout_alignBottom="@id/viewPagerPhotos"
+            android:layout_alignLeft="@id/viewPagerPhotos"
+            android:layout_marginLeft="0dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_media_previous"/>
+
+        <!-- Sağ geçiş butonu -->
+        <ImageButton
+            android:id="@+id/buttonNextPhoto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@id/viewPagerPhotos"
+            android:layout_alignBottom="@id/viewPagerPhotos"
+            android:layout_alignRight="@id/viewPagerPhotos"
+            android:layout_marginRight="0dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_media_next"/>
 
         <View
             android:id="@+id/room_inspect_photo_scroll_bar_frame"
@@ -81,98 +118,6 @@
             android:layout_marginTop="403dp"
             android:background="@drawable/room_inspect_photo_scroll_bar"
             />
-
-
-        <HorizontalScrollView
-            android:id="@+id/room_inspect_photo_scroll_bar"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="415dp"
-            android:scrollbars="none"
-            android:fadeScrollbars="false"
-            android:fillViewport="true"
-            android:layout_marginEnd="32dp"
-            >
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:orientation="horizontal"
-                android:layout_marginStart="11dp">
-
-                <!--
-                   Put your thumbnail ImageViews (or whatever) here.
-                   Example:
-                -->
-                <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/room1"
-                    android:scaleType="fitCenter"
-                    android:layout_marginEnd="8dp"
-                    />
-
-                <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/room2"
-                    android:scaleType="fitCenter"
-                    android:layout_marginEnd="8dp"
-                    />
-
-                <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/room3"
-                    android:scaleType="fitCenter"
-                    android:layout_marginEnd="8dp"
-                    />
-
-                <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/room1"
-                    android:scaleType="fitCenter"
-                    android:layout_marginEnd="8dp"
-                    />
-
-                <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/room3"
-                    android:scaleType="fitCenter"
-                    android:layout_marginEnd="8dp"
-                    />
-
-                <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/room1"
-                    android:scaleType="fitCenter"
-                    android:layout_marginEnd="8dp"
-                    />
-
-                <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/room3"
-                    android:scaleType="fitCenter"
-                    android:layout_marginEnd="8dp"
-                    />
-
-
-                <Button
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/room2"
-                    android:scaleType="fitCenter"
-                    android:layout_marginEnd="8dp"
-                    />
-
-                <!-- …etc -->
-            </LinearLayout>
-        </HorizontalScrollView>
 
         <View
             android:id="@+id/room_inspect_info_bar"

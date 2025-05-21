@@ -38,6 +38,13 @@ class RegisterActivity : AppCompatActivity() {
             insets
         }
 
+        // Cinsiyet Spinner'ını doldur
+        val genderSpinner = binding.registerGender
+        val genderOptions = listOf("Please select", "Male", "Female")
+        val adapter = android.widget.ArrayAdapter(this, android.R.layout.simple_spinner_item, genderOptions)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        genderSpinner.adapter = adapter
+
         registerMbti = intent.getStringExtra("registerMbti") ?: ""
 
         firebaseDatabase = FirebaseDatabase.getInstance()
@@ -46,20 +53,23 @@ class RegisterActivity : AppCompatActivity() {
         binding.registerNextButton.setOnClickListener{
             val registerName = binding.registerName.text.toString()
             val registerSurname = binding.registerSurname.text.toString()
-            val registerGender = binding.registerGender.text.toString()
+            val registerGender = binding.registerGender.selectedItem.toString()
             val registerAgeStr = binding.registerAge.text.toString()
             val registerAge = registerAgeStr.toIntOrNull()
             val registerEmail = binding.registerEmail.text.toString()
             val registerPassword = binding.registerPassword.text.toString()
 
             if (registerName.isNotEmpty() && registerSurname.isNotEmpty()
-                && registerGender.isNotEmpty() && registerAge != null
+                && registerGender != "Please select" && registerGender.isNotEmpty() && registerAge != null
                 && registerEmail.isNotEmpty() && registerPassword.isNotEmpty()){
                 checkEmail(registerName, registerSurname, registerGender, registerAge, registerEmail, registerPassword)
             } else {
-                Toast.makeText(this@RegisterActivity, "Please fill all fields.", Toast.LENGTH_SHORT).show()
+                if (registerGender == "Please select") {
+                    Toast.makeText(this@RegisterActivity, "Please select a gender.", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this@RegisterActivity, "Please fill all fields.", Toast.LENGTH_SHORT).show()
+                }
             }
-
         }
     }
 
