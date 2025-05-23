@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainRoommatesActivity">
+
+    <RelativeLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainRoommatesActivity">
+        <!-- background eklenecek-->
+
+        <Button
+            android:id="@+id/profile_pic_main"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bar_photo"/>
+            <!--android:onClick="open_profile"-->
+
+        <TextView
+            android:id="@+id/roombti"
+            android:layout_width="110dp"
+            android:layout_height="29dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="151dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            android:text="@string/roombti"
+            android:textAppearance="@style/roombti"
+            android:gravity="center_horizontal|center_vertical"
+            />
+
+        <Button
+            android:id="@+id/menu_option"
+            android:layout_width="32dp"
+            android:layout_height="19dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="356dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/menu_bar"
+            android:onClick="open_menu"
+            />
+
+        <View
+            android:id="@+id/dm_background"
+            android:layout_width="376dp"
+            android:layout_height="798dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="106dp"
+            android:background="@drawable/dm_background"
+            />
+        <View
+            android:id="@+id/profile_photo"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="177dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="119dp"
+            android:background="@drawable/bar_photo"
+            />
+
+        <TextView
+            android:id="@+id/dm_name"
+            android:layout_width="76dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="168dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="182dp"
+            android:text="Mert Özkaya"
+            android:textAppearance="@style/dm_name"
+            android:gravity="center_horizontal|center_vertical"
+            />
+
+        <View
+            android:id="@+id/chat_blue"
+            android:layout_width="165dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="36dp"
+            android:layout_marginTop="239dp"
+            android:background="@drawable/chat_blue" />
+
+        <View
+            android:id="@+id/chat_white"
+            android:layout_width="165dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="304dp"
+            android:background="@drawable/chat_white"
+            />
+
+        <View
+            android:id="@+id/chat_blue2"
+            android:layout_width="165dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="368dp"
+            android:background="@drawable/chat_blue"
+            />
+
+        <View
+            android:id="@+id/chat_input"
+            android:layout_width="344dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="34dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="840dp"
+            android:background="@drawable/chat_bar"
+            />
+
+        <View
+            android:id="@+id/chat_circle"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="336dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="848dp"
+            android:background="@drawable/chat_circle"
+            />
+        <View
+            android:id="@+id/chat_send"
+            android:layout_width="24dp"
+            android:layout_height="21dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="342dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="854dp"
+            android:background="@drawable/chat_send"
+            />
+        <TextView
+            android:id="@+id/text_here"
+            android:layout_width="84dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="855dp"
+            android:text="@string/text_here"
+            android:textAppearance="@style/text_here"
+            android:gravity="center_horizontal|center_vertical"
+            />
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- The fill (transparent so your room2 image shows through) -->
+    <solid android:color="@android:color/transparent"/>
+
+    <!-- The outline stroke -->
+    <stroke
+        android:width="2dp"
+        android:color="#FF000000"/>  <!-- black outline, adjust color -->
+
+    <!-- rounded corners if you like -->
+    <corners android:radius="20dp"/>
+</shape>

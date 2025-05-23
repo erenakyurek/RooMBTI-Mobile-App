@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RoomInspectActivity">
+
+    <RelativeLayout
+        android:id="@+id/room_inspect"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:orientation="vertical"
+        tools:context=".RoomInspectActivity">
+
+        <View
+            android:id="@+id/profile_pic_main"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bar_photo"
+            /><!--  profil fotosu-->
+
+        <TextView
+            android:id="@+id/roombti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="151dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            android:text="@string/roombti"
+            android:textAppearance="@style/roombti"
+            android:gravity="center_horizontal|center_vertical"
+            />
+
+        <Button
+            android:id="@+id/menu_option"
+            android:layout_width="32dp"
+            android:layout_height="19dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="356dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/menu_bar"
+            android:onClick="open_menu"
+            /> <!-- menu bar fotosu-->
+
+        <View
+            android:id="@+id/room_inspect_house_big_frame"
+            android:layout_width="376dp"
+            android:layout_height="251dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="143dp"
+            android:background="@drawable/room_inspect_big_photo_frame"
+            />
+
+        <!-- Büyük fotoğraf yerine kaydırmalı galeri (ViewPager2) -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerPhotos"
+            android:layout_width="376dp"
+            android:layout_height="251dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="143dp"
+            android:background="@android:color/transparent"/>
+
+        <!-- Küçük fotoğrafların yatay kaydırmalı galerisi -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewThumbnails"
+            android:layout_width="376dp"
+            android:layout_height="64dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_below="@id/viewPagerPhotos"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            />
+
+        <!-- Sol geçiş butonu -->
+        <ImageButton
+            android:id="@+id/buttonPrevPhoto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@id/viewPagerPhotos"
+            android:layout_alignBottom="@id/viewPagerPhotos"
+            android:layout_alignLeft="@id/viewPagerPhotos"
+            android:layout_marginLeft="0dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_media_previous"/>
+
+        <!-- Sağ geçiş butonu -->
+        <ImageButton
+            android:id="@+id/buttonNextPhoto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@id/viewPagerPhotos"
+            android:layout_alignBottom="@id/viewPagerPhotos"
+            android:layout_alignRight="@id/viewPagerPhotos"
+            android:layout_marginRight="0dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_media_next"/>
+
+        <View
+            android:id="@+id/room_inspect_photo_scroll_bar_frame"
+            android:layout_width="376dp"
+            android:layout_height="84dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="403dp"
+            android:background="@drawable/room_inspect_photo_scroll_bar"
+            />
+
+        <View
+            android:id="@+id/room_inspect_info_bar"
+            android:layout_width="376dp"
+            android:layout_height="42dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="496dp"
+            android:background="@drawable/room_inspect_info_bar"
+            />
+
+        <View
+            android:id="@+id/location_icon"
+            android:layout_width="12dp"
+            android:layout_height="17.24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="509dp"
+            android:background="@drawable/location_icon"
+            />
+
+        <View
+            android:id="@+id/person_icon"
+            android:layout_width="17.3dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="197.35dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="508dp"
+            android:background="@drawable/person_icon_black"
+
+            />
+
+        <TextView
+            android:id="@+id/location_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="53dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="511dp"
+            android:text="@string/ist_atasehir"
+            android:textAppearance="@style/room_inspect_text_theme"
+            android:gravity="center_horizontal|center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/roommate_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="220dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="511dp"
+            android:text="@string/rm3_4"
+            android:textAppearance="@style/room_inspect_text_theme"
+            android:gravity="center_horizontal|center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/room_inspect_tl_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="293dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="504dp"
+            android:text="@string/tl_icon_text"
+            android:textAppearance="@style/tl_icon_text_theme"
+            android:gravity="center_horizontal|center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/room_inspect_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="312dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="512dp"
+            android:text="@string/person"
+            android:textAppearance="@style/room_inspect_text_theme"
+            android:gravity="center_horizontal|center_vertical"
+            />
+
+        <View
+            android:id="@+id/room_inspect_info_bar_2"
+            android:layout_width="376dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="547dp"
+            android:background="@drawable/room_inspect_info_bar_2"
+            />
+
+        <View
+            android:id="@+id/room_inspect_person1"
+            android:layout_width="17.3dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="567dp"
+            android:background="@drawable/mediator_avatar"
+            />
+
+        <TextView
+            android:id="@+id/room_inspect_person1_type"
+            android:layout_width="25dp"
+            android:layout_height="12dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="58dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="570dp"
+            android:text="@string/infp"
+            android:textAppearance="@style/person_inspect_diplomat_text"
+            android:gravity="center_vertical"
+            />
+
+        <View
+            android:id="@+id/room_inspect_person2"
+            android:layout_width="17.3dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="603dp"
+            android:background="@drawable/person_icon_purple"
+            />
+
+        <TextView
+            android:id="@+id/room_inspect_person2_type"
+            android:layout_width="25dp"
+            android:layout_height="12dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="58dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="606dp"
+            android:text="@string/intp"
+            android:textAppearance="@style/person_inspect_analysts_text_theme"
+            android:gravity="center_vertical"
+            />
+
+        <View
+            android:id="@+id/room_inspect_person3"
+            android:layout_width="17.3dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="111dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="570dp"
+            android:background="@drawable/person_icon_purple"
+            />
+
+        <TextView
+            android:id="@+id/room_inspect_person3_type"
+            android:layout_width="27dp"
+            android:layout_height="12dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="133dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="573dp"
+            android:text="@string/enfj"
+            android:textAppearance="@style/person_inspect_analysts_text_theme"
+            android:gravity="center_vertical"
+            />
+
+        <View
+            android:id="@+id/room_inspect_person4"
+            android:layout_width="17.3dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="111dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="603dp"
+            android:background="@drawable/person_icon_empty"
+            />
+
+        <View
+            android:id="@+id/room_inspect_info_bar2_divider"
+            android:layout_width="1dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="205dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="562dp"
+            android:background="@drawable/room_inspect_info_bar2_divider"
+            />
+
+        <View
+            android:id="@+id/cat_logo"
+            android:layout_width="26.56dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="250dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="567dp"
+            android:background="@drawable/cat_icon"
+            />
+
+        <View
+            android:id="@+id/subtract"
+            android:layout_width="27dp"
+            android:layout_height="4dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="250dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="625dp"
+            android:background="@drawable/cigarette_icon"
+            />
+        <View
+            android:id="@+id/smoking_aig"
+            android:layout_width="14dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="263dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="609dp"
+            android:background="@drawable/smoke_icon"
+            />
+
+        <View
+            android:id="@+id/male_icon"
+            android:layout_width="24.69dp"
+            android:layout_height="23.38dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="251dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="653dp"
+            android:background="@drawable/male_icon_black"
+            />
+
+        <TextView
+            android:id="@+id/pet_allowed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="287dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="573dp"
+            android:text="@string/pet_allowed_text"
+            android:textAppearance="@style/room_inspect_text_theme"
+            android:gravity="center_vertical"
+            />
+
+        <!-- Auto layout, variables, and unit scale are not yet supported -->
+        <TextView
+            android:id="@+id/smoking_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="287dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="615dp"
+            android:text="@string/smoking_allowed_text"
+            android:textAppearance="@style/room_inspect_text_theme"
+            android:gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/male_prefer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="287dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="659dp"
+            android:text="@string/male_preference_text"
+            android:textAppearance="@style/room_inspect_text_theme"
+            android:gravity="center_vertical"
+            />
+
+        <View
+            android:id="@+id/room_inspect_info_bar_3"
+            android:layout_width="375dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="19dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="706dp"
+            android:background="@drawable/room_inspect_info_bar_2"
+            />
+
+        <View
+            android:id="@+id/room_inspect_info_bar3_divider"
+            android:layout_width="1dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="205dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="721dp"
+            android:background="@drawable/room_inspect_info_bar2_divider"
+            />
+
+        <View
+            android:id="@+id/ellipse_2"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="47dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="752dp"
+            android:background="@drawable/bar_photo"
+            />
+
+        <TextView
+            android:id="@+id/ersin_kara"
+            android:layout_width="57dp"
+            android:layout_height="12dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="123dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="775dp"
+            android:text="@string/ersin_kara"
+            android:textAppearance="@style/room_inspect_text_theme"
+            android:gravity="center_horizontal|center_vertical"
+            />
+
+        <Button
+            android:id="@+id/room_inspect_message_button"
+            android:layout_width="28.41dp"
+            android:layout_height="19.55dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="260dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="752dp"
+            android:background="@drawable/chat_logo"
+            android:onClick="open_chat"
+            />
+
+        <TextView
+            android:id="@+id/room_inspect_message_button_text"
+            android:layout_width="45dp"
+            android:layout_height="12dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="297dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="755dp"
+            android:text="@string/message"
+            android:textAppearance="@style/room_inspect_text_theme"
+            android:gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/room_inspect_phone_num"
+            android:layout_width="91dp"
+            android:layout_height="12dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="256dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="798dp"
+            android:text="@string/room_inspect_phone_num"
+            android:textAppearance="@style/room_inspect_text_theme"
+            android:gravity="center_vertical"
+            />
+
+    </RelativeLayout>
+</ScrollView>

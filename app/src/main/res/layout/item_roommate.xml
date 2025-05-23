@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:layout_marginLeft="24dp"
+    android:layout_marginRight="24dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_gravity="center_horizontal">
+
+    <!-- Kart arka planı (renk/drawable dinamik atanacak) -->
+    <View
+        android:id="@+id/profile_bar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@drawable/profile_bar_blue" />
+
+    <!-- Profil fotoğrafı -->
+    <View
+        android:id="@+id/photo"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/bar_photo" />
+
+    <!-- İsim -->
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="120dp"
+        android:layout_height="22dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentLeft="true"
+        android:text="Kullanıcı Adı"
+        android:textAppearance="@style/name"
+        android:gravity="center_vertical" />
+
+    <!-- MBTI tipi -->
+    <TextView
+        android:id="@+id/textViewMbti"
+        android:layout_width="47dp"
+        android:layout_height="22dp"
+        android:layout_marginLeft="278dp"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentLeft="true"
+        android:text="MBTI"
+        android:textAppearance="@style/mbti_type"
+        android:gravity="center_vertical" />
+
+    <!-- Cinsiyet simgesi -->
+    <View
+        android:id="@+id/gender_icon"
+        android:layout_width="19dp"
+        android:layout_height="29dp"
+        android:layout_marginLeft="245dp"
+        android:layout_marginTop="21dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/female_icon" />
+
+    <!-- Ok işareti -->
+    <View
+        android:id="@+id/arrow_icon"
+        android:layout_width="24.25dp"
+        android:layout_height="21dp"
+        android:layout_marginLeft="342dp"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/right_arrow" />
+
+</RelativeLayout> 

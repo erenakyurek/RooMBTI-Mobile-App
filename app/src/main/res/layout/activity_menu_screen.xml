@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuScreenActivity">
+
+    <View
+        android:id="@+id/slide_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/slide_rect" />
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="92dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="304dp"
+        android:layout_marginTop="90dp"
+        android:gravity="center"
+        android:text="@string/roombti"
+        android:textAppearance="@style/roombti_slide" />
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="214dp"
+        android:layout_height="15dp"
+        android:layout_marginLeft="193dp"
+        android:layout_marginTop="124dp"
+        android:gravity="center_vertical"
+        android:text="@string/slide_slogan"
+        android:textAppearance="@style/slogan_slide" />
+
+    <Button
+        android:id="@+id/menu_option"
+        android:layout_width="32dp"
+        android:layout_height="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/menu_option_white" />
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="199dp"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="215dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/white_line_horizontal" />
+
+    <TextView
+        android:id="@+id/edit_profil"
+        android:layout_width="99dp"
+        android:layout_height="22dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="231dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="194dp"
+        android:text="@string/slide_edit_profile"
+        android:textAppearance="@style/login_text_theme"
+        android:gravity="center_vertical"
+        />
+    <View
+        android:id="@+id/line_2"
+        android:layout_width="199dp"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="215dp"
+        android:layout_marginTop="230dp"
+        android:background="@drawable/white_line_horizontal" />
+
+    <TextView
+        android:id="@+id/settings"
+        android:layout_width="75dp"
+        android:layout_height="22dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="231dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="244dp"
+        android:text="@string/slide_settings"
+        android:textAppearance="@style/login_text_theme"
+        android:gravity="center_vertical"
+        />
+    <View
+        android:id="@+id/line_3"
+        android:layout_width="199dp"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="215dp"
+        android:layout_marginTop="280dp"
+        android:background="@drawable/white_line_horizontal" />
+
+
+
+
+
+    <View
+        android:id="@+id/line_5"
+        android:layout_width="199dp"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="215dp"
+        android:layout_marginTop="776dp"
+        android:background="@drawable/white_line_horizontal" />
+
+    <TextView
+        android:id="@+id/log_out"
+        android:layout_width="70dp"
+        android:layout_height="22dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="232dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="790dp"
+        android:text="@string/slide_log_out"
+        android:textAppearance="@style/login_text_theme"
+        android:gravity="center_vertical"
+        />
+
+    <View
+        android:id="@+id/line_6"
+        android:layout_width="199dp"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="215dp"
+        android:layout_marginTop="826dp"
+        android:background="@drawable/white_line_horizontal" />
+
+    <TextView
+        android:id="@+id/app_version"
+        android:layout_width="100dp"
+        android:layout_height="16dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="859dp"
+        android:gravity="center_vertical"
+        android:text="@string/app_version"
+        android:textAppearance="@style/app_version" />
+</RelativeLayout>
