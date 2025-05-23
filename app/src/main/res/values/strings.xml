@@ -74,4 +74,5 @@
     <string name="slide_log_out">Log out</string>
     <string name="slide_slogan">Find a roommate for your type.</string>
     <string name="app_version">App version: 1.0</string>
+    <string name="title_activity_chats">ChatsActivity</string>
 </resources>

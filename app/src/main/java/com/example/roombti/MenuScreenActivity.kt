@@ -43,10 +43,14 @@ class MenuScreenActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-    }
-    fun open_chat(view: View) {
-        val intent = Intent(this, DMPageActivity::class.java)
-        startActivity(intent)
+
+        binding.chats.setOnClickListener{
+            val intent = Intent(this@MenuScreenActivity, ChatsActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+
     }
 
 }

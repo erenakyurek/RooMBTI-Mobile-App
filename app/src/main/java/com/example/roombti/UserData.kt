@@ -22,6 +22,7 @@ data class UserData(
     val rent: Int?              = null,
     val allowSmoking: Boolean?  = null,
     val allowPets: Boolean?     = null,
+    val university: String?     = null,
     // home-lister details:
     val currentHousemates: Int? = null,
     val totalHousemates: Int?   = null,

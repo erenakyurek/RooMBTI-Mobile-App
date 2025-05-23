@@ -16,10 +16,8 @@ import com.google.firebase.auth.FirebaseAuth
 class HouseRenterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHouseRenterBinding
-    private lateinit var firebaseDatabase: FirebaseDatabase
-    private lateinit var databaseReference: DatabaseReference
+    private lateinit var mDbRef: DatabaseReference
     private lateinit var mAuth: FirebaseAuth
-    private lateinit var userId: String
 
     private lateinit var name: String
     private lateinit var surname: String
@@ -51,7 +49,6 @@ class HouseRenterActivity : AppCompatActivity() {
         mbti = intent.getStringExtra("registerMbti").orEmpty()
         userType = intent.getStringExtra("userType").orEmpty()
 
-        val usersRef = FirebaseDatabase.getInstance().reference.child("users")
         mAuth = FirebaseAuth.getInstance()
 
         binding.houserenterNextButton.setOnClickListener {
@@ -64,44 +61,31 @@ class HouseRenterActivity : AppCompatActivity() {
 
             if (minHm != null && maxHm != null && loc.isNotEmpty() && rent != null) {
 
-                val userMap = hashMapOf<String, Any>(
-                    "name" to name,
-                    "surname" to surname,
-                    "gender" to gender,
-                    "age" to age,
-                    "email" to email,
-                    "password" to password,
-                    "mbti" to mbti,
-                    "userType" to userType,
-                    "minHousemates" to minHm,
-                    "maxHousemates" to maxHm,
-                    "location" to loc,
-                    "rent" to rent,
-                    "allowSmoking" to smoke,
-                    "allowPets" to pet
-                )
-
                 mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if(task.isSuccessful) {
-                            val newUserRef = usersRef.push()
-                            newUserRef.setValue(userMap)
-                                .addOnSuccessListener {
-                                    Toast.makeText(
-                                        this,
-                                        "Registration complete! Please log in.",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                    startActivity(Intent(this, LoginPageActivity::class.java))
-                                    finish()
-                                }
-                                .addOnFailureListener { e ->
-                                    Toast.makeText(
-                                        this,
-                                        "Error saving data: ${e.message}",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
+                            val user = UserData(
+                                name = name,
+                                surname = surname,
+                                gender = gender,
+                                age = age,
+                                email = email,
+                                password = password,
+                                mbti = mbti,
+                                userType = userType,
+                                minHousemates = minHm,
+                                maxHousemates = maxHm,
+                                location = loc,
+                                rent = rent,
+                                allowSmoking = smoke,
+                                allowPets = pet,
+                                id = mAuth.currentUser?.uid!!
+                            )
+                            mDbRef = FirebaseDatabase.getInstance().getReference()
+                            mDbRef.child("user").child(mAuth.currentUser?.uid!!).setValue(user)
+                            Toast.makeText(this, "Registration complete! Please log in.", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this, LoginPageActivity::class.java))
+
                         }else {
                             Toast.makeText(this@HouseRenterActivity, "Something went wrong", Toast.LENGTH_SHORT)
                                 .show()

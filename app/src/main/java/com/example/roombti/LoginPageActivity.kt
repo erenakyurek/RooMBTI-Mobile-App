@@ -15,8 +15,7 @@ import com.google.firebase.database.*
 class LoginPageActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginPageBinding
-    private lateinit var firebaseDatabase: FirebaseDatabase
-    private lateinit var databaseReference: DatabaseReference
+    private lateinit var mDbRef: DatabaseReference
     private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,8 +30,6 @@ class LoginPageActivity : AppCompatActivity() {
             insets
         }
 
-        firebaseDatabase = FirebaseDatabase.getInstance()
-        databaseReference = firebaseDatabase.reference.child("users")
         mAuth = FirebaseAuth.getInstance()
 
         binding.loginButtonBlue.setOnClickListener {
@@ -47,73 +44,27 @@ class LoginPageActivity : AppCompatActivity() {
             mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        databaseReference.orderByChild("email").equalTo(email)
-                            .addListenerForSingleValueEvent(object : ValueEventListener {
-                                override fun onDataChange(snapshot: DataSnapshot) {
-                                    if (!snapshot.exists()) {
-                                        Toast.makeText(
-                                            this@LoginPageActivity,
-                                            "Email not found.",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
-                                        return
+                        mDbRef = FirebaseDatabase.getInstance().getReference()
+                        mDbRef.child("user").child(mAuth.currentUser?.uid!!)
+                        .addListenerForSingleValueEvent(object : ValueEventListener {
+                            override fun onDataChange(snapshot: DataSnapshot) {
+                                val userType = snapshot.child("userType").getValue(String::class.java)
+                                when (userType) {
+                                    "houserenter" -> {
+                                        startActivity(Intent(this@LoginPageActivity, MainRoommatesActivity::class.java))
                                     }
-                                    // there should be only one matching child
-                                    for (userSnap in snapshot.children) {
-                                        val user = userSnap.getValue(UserData::class.java)
-                                        if (user != null && user.password == password) {
-                                            // we have a successful login
-                                            when (user.userType) { // read the userType field
-                                                "houserenter" -> {
-                                                    startActivity(
-                                                        Intent(
-                                                            this@LoginPageActivity,
-                                                            MainRoommatesActivity::class.java
-                                                        ).putExtra("USER_ID", user.id)
-                                                    )
-                                                }
-
-                                                "homeseeker" -> {
-                                                    startActivity(
-                                                        Intent(
-                                                            this@LoginPageActivity,
-                                                            MainHousesActivity::class.java
-                                                        ).putExtra("USER_ID", user.id)
-                                                    )
-                                                }
-
-                                                else -> { // fallback if userType wasn’t set
-                                                    Toast.makeText(
-                                                        this@LoginPageActivity,
-                                                        "User type unknown—please complete registration again.",
-                                                        Toast.LENGTH_LONG
-                                                    ).show()
-                                                }
-                                            }
-                                            finish()
-                                            return
-                                        }
+                                    "homeseeker" -> {
+                                        startActivity(Intent(this@LoginPageActivity, MainHousesActivity::class.java))
                                     }
-                                    // if we get here, email matched but password was wrong
-                                    Toast.makeText(
-                                        this@LoginPageActivity,
-                                        "Incorrect password.",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
                                 }
-
-                                override fun onCancelled(error: DatabaseError) {
-                                    Toast.makeText(
-                                        this@LoginPageActivity,
-                                        "Database error: ${error.message}",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            })
-                    }else{
-                        Toast.makeText(this@LoginPageActivity, "Invalid Credentials", Toast.LENGTH_SHORT).show()
+                            }
+                            override fun onCancelled(error: DatabaseError) {
+                                Toast.makeText(this@LoginPageActivity, "Error: ${error.message}", Toast.LENGTH_SHORT).show()
+                            }
+                        })
+                    } else {
+                        Toast.makeText(this@LoginPageActivity, "User does not exist", Toast.LENGTH_SHORT).show()
                     }
-
                 }
         }
     }
