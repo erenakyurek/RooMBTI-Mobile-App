@@ -16,10 +16,8 @@ import com.google.firebase.auth.FirebaseAuth
 class HomeSeekerActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeSeekerBinding
-    private lateinit var firebaseDatabase: FirebaseDatabase
-    private lateinit var databaseReference: DatabaseReference
+    private lateinit var mDbRef: DatabaseReference
     private lateinit var mAuth: FirebaseAuth
-    private lateinit var userId: String
 
     private lateinit var name: String
     private lateinit var surname: String
@@ -66,46 +64,33 @@ class HomeSeekerActivity : AppCompatActivity() {
 
             if (minHm!=null && maxHm!=null && loc.isNotEmpty() && minB!=null && maxB!=null) {
 
-                val userMap = hashMapOf<String, Any>(
-                    "name" to name,
-                    "surname" to surname,
-                    "gender" to gender,
-                    "age" to age,
-                    "email" to email,
-                    "password" to password,
-                    "mbti" to mbti,
-                    "userType" to userType,
-                    "minHousemates" to minHm,
-                    "maxHousemates" to maxHm,
-                    "location" to loc,
-                    "minBudget" to minB,
-                    "maxBudget" to maxB,
-                    "allowSmoking" to smoke,
-                    "allowPets" to pet,
-                    "university" to university
-                )
 
                 mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if(task.isSuccessful) {
-                            val newUserRef = usersRef.push()
-                            newUserRef.setValue(userMap)
-                                .addOnSuccessListener {
-                                    Toast.makeText(
-                                        this,
-                                        "Registration complete! Please log in.",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                    startActivity(Intent(this, LoginPageActivity::class.java))
-                                    finish()
-                                }
-                                .addOnFailureListener { e ->
-                                    Toast.makeText(
-                                        this,
-                                        "Error saving data: ${e.message}",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
+                            val user = UserData(
+                                name = name,
+                                surname = surname,
+                                gender = gender,
+                                age = age,
+                                email = email,
+                                password = password,
+                                mbti = mbti,
+                                userType = userType,
+                                minHousemates = minHm,
+                                maxHousemates = maxHm,
+                                location = loc,
+                                minBudget = minB,
+                                maxBudget = maxB,
+                                allowSmoking = smoke,
+                                allowPets = pet,
+                                university = university,
+                                id = mAuth.currentUser?.uid!!
+                            )
+                            mDbRef = FirebaseDatabase.getInstance().getReference()
+                            mDbRef.child("user").child(mAuth.currentUser?.uid!!).setValue(user)
+                            Toast.makeText(this, "Registration complete! Please log in.", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this, LoginPageActivity::class.java))
                         }else {
                             Toast.makeText(this@HomeSeekerActivity, "Something went wrong", Toast.LENGTH_SHORT)
                                 .show()
