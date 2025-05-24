@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuScreenActivity">
+
+    <View
+        android:id="@+id/slide_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/slide_rect" />
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="92dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="304dp"
+        android:layout_marginTop="90dp"
+        android:gravity="center"
+        android:text="@string/roombti"
+        android:textAppearance="@style/roombti_slide" />
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="214dp"
+        android:layout_height="15dp"
+        android:layout_marginLeft="193dp"
+        android:layout_marginTop="124dp"
+        android:gravity="center_vertical"
+        android:text="@string/slide_slogan"
+        android:textAppearance="@style/slogan_slide" />
+
+    <Button
+        android:id="@+id/menu_option"
+        android:layout_width="32dp"
+        android:layout_height="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/menu_option_white" />
+
+    <RelativeLayout
+        android:id="@+id/chatscreen"
+        android:layout_marginTop="175dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/userRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/user_layout"
+            />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
