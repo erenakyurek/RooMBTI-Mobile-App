@@ -51,4 +51,8 @@ class PersonInspectActivity : AppCompatActivity() {
         val intent = Intent(this, MenuScreenActivity::class.java)
         startActivity(intent)
     }
+    fun open_chat(view: View) {
+        val intent = Intent(this, DMPageActivity::class.java)
+        startActivity(intent)
+    }
 }
