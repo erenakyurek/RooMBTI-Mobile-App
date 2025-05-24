@@ -12,9 +12,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.roombti.databinding.ActivityDmpageBinding
-import com.example.roombti.databinding.ActivityHomeSeekerBinding
-import com.example.roombti.databinding.ActivityLoginPageBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

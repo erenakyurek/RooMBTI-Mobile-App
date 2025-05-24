@@ -7,10 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.roombti.databinding.ActivityHomeSeekerBinding
-import com.example.roombti.databinding.ActivityIntroBinding
 import com.google.firebase.database.*
 import android.widget.Toast
+import com.example.roombti.databinding.ActivityHomeSeekerBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeSeekerActivity : AppCompatActivity() {
@@ -31,8 +30,7 @@ class HomeSeekerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeSeekerBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
         enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -49,7 +47,6 @@ class HomeSeekerActivity : AppCompatActivity() {
         mbti = intent.getStringExtra("registerMbti").orEmpty()
         userType = intent.getStringExtra("userType").orEmpty()
 
-        val usersRef = FirebaseDatabase.getInstance().reference.child("users")
         mAuth = FirebaseAuth.getInstance()
 
         binding.homeseekerNextButton.setOnClickListener {

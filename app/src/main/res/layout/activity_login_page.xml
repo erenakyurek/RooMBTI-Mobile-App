@@ -123,7 +123,7 @@
         <Button
             android:id="@+id/login_button_blue"
             android:layout_width="154dp"
-            android:layout_height="39dp"
+            android:layout_height="48dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="128dp"
             android:layout_alignParentTop="true"

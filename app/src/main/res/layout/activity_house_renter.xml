@@ -347,7 +347,6 @@
             android:layout_marginTop="672dp"
             android:background="@drawable/mbti_next_button"
             android:gravity="center"
-            android:onClick="house_renter_next"
             android:text="@string/next_text"
             android:textAppearance="@style/next_text_theme" />
 
