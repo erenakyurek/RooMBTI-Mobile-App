@@ -2,8 +2,15 @@ package com.example.roombti
 
 import android.content.Context
 import java.io.BufferedReader
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
-data class MatchResult(val score: Float)
+data class MatchResult(val score: Float, val userData: UserData)
 
 class MatchingAlgorithm {
     companion object {
@@ -35,9 +42,43 @@ class MatchingAlgorithm {
             }
         }
 
+        suspend fun getMatchingUsers(currentUserId: String, context: Context): List<MatchResult> = withContext(Dispatchers.IO) {
+            val database = FirebaseDatabase.getInstance()
+            val usersRef = database.reference.child("user")
+            
+            // Get current user's data
+            val currentUserSnapshot = usersRef.child(currentUserId).get().await()
+            val currentUser = currentUserSnapshot.getValue(UserData::class.java)
+            
+            if (currentUser == null) {
+                return@withContext emptyList()
+            }
+
+            // Get all users and filter by type in memory
+            val allUsersSnapshot = usersRef.get().await()
+            val targetUserType = if (currentUser.userType == "houserenter") "homeseeker" else "houserenter"
+            
+            val matchResults = mutableListOf<MatchResult>()
+            
+            for (userSnapshot in allUsersSnapshot.children) {
+                val potentialMatch = userSnapshot.getValue(UserData::class.java)
+                if (potentialMatch != null && potentialMatch.userType == targetUserType) {
+                    val score = if (currentUser.userType == "houserenter") {
+                        calculateMatchScore(potentialMatch, currentUser)
+                    } else {
+                        calculateMatchScore(currentUser, potentialMatch)
+                    }
+                    matchResults.add(MatchResult(score, potentialMatch))
+                }
+            }
+            
+            // Sort by score in descending order
+            matchResults.sortedByDescending { it.score }
+        }
+
         fun calculateMatchScore(
-            seeker: UserData, // userType = "roommate"
-            lister: UserData, // userType = "home"
+            seeker: UserData, // userType = "homeseeker"
+            lister: UserData, // userType = "houserenter"
             preferredGender: String? = null
         ): Float {
             var totalScore = 0f
@@ -99,4 +140,4 @@ class MatchingAlgorithm {
             }
         }
     }
-} 
+}

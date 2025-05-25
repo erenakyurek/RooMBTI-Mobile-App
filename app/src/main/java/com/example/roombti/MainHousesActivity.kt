@@ -2,18 +2,23 @@ package com.example.roombti
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.roombti.databinding.ActivityMainHousesBinding
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainHousesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainHousesBinding
-    private lateinit var mAuth:FirebaseAuth
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,20 +33,38 @@ class MainHousesActivity : AppCompatActivity() {
             insets
         }
 
+        // Initialize MBTI matrix
+        MatchingAlgorithm.initializeMBTIMatrix(this)
+
         // --- RecyclerView ve HouseAdapter entegrasyonu ---
         val recyclerView = binding.recyclerViewHouses
         recyclerView.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
 
-        // Örnek userList (userType = "home" olanlar)
-        val userList = listOf(
-            UserData(id = "1", name = "Ev Sahibi 1", userType = "home", location = "Istanbul, Atasehir", totalHousemates = 4, currentHousemates = 3, rentPerPerson = 3850, photos = listOf()),
-            UserData(id = "2", name = "Ev Sahibi 2", userType = "home", location = "Istanbul, Kadikoy", totalHousemates = 3, currentHousemates = 1, rentPerPerson = 6800, photos = listOf()),
-            UserData(id = "3", name = "Ev Sahibi 3", userType = "home", location = "Izmir, Bornova", totalHousemates = 2, currentHousemates = 2, rentPerPerson = 4200, photos = listOf())
-        )
-        recyclerView.adapter = HouseAdapter(userList) { user ->
-            val intent = Intent(this, RoomInspectActivity::class.java)
-            intent.putExtra("user", user)
-            startActivity(intent)
+        // Get current user's matches
+        val currentUserId = mAuth.currentUser?.uid
+        if (currentUserId != null) {
+            Log.d("MainHousesActivity", "Current User ID: $currentUserId")
+            CoroutineScope(Dispatchers.Main).launch {
+                try {
+                    val matches = MatchingAlgorithm.getMatchingUsers(currentUserId, this@MainHousesActivity)
+                    Log.d("MainHousesActivity", "Number of matches found: ${matches.size}")
+                    if (matches.isEmpty()) {
+                        Toast.makeText(this@MainHousesActivity, "No matches found", Toast.LENGTH_SHORT).show()
+                    }
+                    val matchedHouses = matches.map { it.userData }
+                    recyclerView.adapter = HouseAdapter(matchedHouses) { user ->
+                        val intent = Intent(this@MainHousesActivity, RoomInspectActivity::class.java)
+                        intent.putExtra("user", user)
+                        startActivity(intent)
+                    }
+                } catch (e: Exception) {
+                    Log.e("MainHousesActivity", "Error getting matches", e)
+                    Toast.makeText(this@MainHousesActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        } else {
+            Log.e("MainHousesActivity", "Current user ID is null")
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
         }
     }
 

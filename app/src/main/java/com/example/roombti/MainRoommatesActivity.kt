@@ -1,6 +1,5 @@
 package com.example.roombti
 
-import android.app.Person
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -10,14 +9,21 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roombti.databinding.ActivityMainRoommatesBinding
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainRoommatesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainRoommatesBinding
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainRoommatesBinding.inflate(layoutInflater)
+        mAuth = FirebaseAuth.getInstance()
         val view = binding.root
         setContentView(view)
         enableEdgeToEdge()
@@ -27,29 +33,28 @@ class MainRoommatesActivity : AppCompatActivity() {
             insets
         }
 
+        // Initialize MBTI matrix
+        MatchingAlgorithm.initializeMBTIMatrix(this)
+
         // --- RecyclerView ve Adapter entegrasyonu ---
         val recyclerView = binding.recyclerViewRoommates
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Örnek userMap (gerçek uygulamada veritabanından gelecek)
-        val userMap = mapOf(
-            "1" to UserData(id = "1", name = "Tuba Selen A.", userType = "roommate", mbti = "ENFP", gender = "female", age = 22, location = "Istanbul, Ataşehir", allowPets = false, allowSmoking = false),
-            "2" to UserData(id = "2", name = "Eren Akyürek", userType = "roommate", mbti = "INTP", gender = "male", age = 23, location = "Istanbul, Beşiktaş", allowPets = true, allowSmoking = false),
-            "3" to UserData(id = "3", name = "Can Sarper D.", userType = "roommate", mbti = "ENTJ", gender = "male", age = 24, location = "Ankara, Çankaya", allowPets = false, allowSmoking = true),
-            "4" to UserData(id = "4", name = "Belma Soysal", userType = "roommate", mbti = "INFP", gender = "female", age = 21, location = "Istanbul, Maslak", allowPets = true, allowSmoking = true),
-            "5" to UserData(id = "5", name = "Beril Güler", userType = "roommate", mbti = "ESFJ", gender = "female", age = 22, location = "Istanbul, Ataşehir", allowPets = false, allowSmoking = false),
-            "6" to UserData(id = "6", name = "Hasan G.", userType = "roommate", mbti = "ISFJ", gender = "male", age = 25, location = "Ankara, Sıhhiye", allowPets = false, allowSmoking = false),
-            "7" to UserData(id = "7", name = "Enes Deniz", userType = "roommate", mbti = "ISFP", gender = "male", age = 23, location = "Izmir, Bornova", allowPets = true, allowSmoking = true),
-            "8" to UserData(id = "8", name = "Doğu Baha A.", userType = "roommate", mbti = "ENFJ", gender = "male", age = 22, location = "Istanbul, Ataşehir", allowPets = false, allowSmoking = false)
-        )
-
-        val filteredList = userMap.values.filter { it.userType == "roommate" }
-        recyclerView.adapter = RoommateAdapter(filteredList) { user ->
-            val intent = Intent(this, PersonInspectActivity::class.java)
-            intent.putExtra("user", user)
-            startActivity(intent)
+        // Get current user's matches
+        val currentUserId = mAuth.currentUser?.uid
+        if (currentUserId != null) {
+            CoroutineScope(Dispatchers.Main).launch {
+                val matches = MatchingAlgorithm.getMatchingUsers(currentUserId, this@MainRoommatesActivity)
+                val matchedUsers = matches.map { it.userData }
+                recyclerView.adapter = RoommateAdapter(matchedUsers) { user ->
+                    val intent = Intent(this@MainRoommatesActivity, PersonInspectActivity::class.java)
+                    intent.putExtra("user", user)
+                    startActivity(intent)
+                }
+            }
         }
     }
+
     fun open_menu(view: View) {
         val intent = Intent(this, MenuScreenActivity::class.java)
         startActivity(intent)
