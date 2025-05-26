@@ -3,25 +3,20 @@ package com.example.roombti
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.roombti.DMPageActivity
-import com.example.roombti.R
-import com.example.roombti.UserData
-import com.google.firebase.Firebase
-import com.google.firebase.FirebaseApp
-import com.google.firebase.auth.FirebaseAuth
+import com.example.roombti.databinding.UserLayoutBinding
 
 class UserAdapter(val context: Context, val userList: ArrayList<UserData>):
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        val view: View = LayoutInflater.from(context).inflate(R.layout.user_layout, parent, false)
-        return UserViewHolder(view)
+        val binding = UserLayoutBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return UserViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -30,22 +25,19 @@ class UserAdapter(val context: Context, val userList: ArrayList<UserData>):
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val currentUser = userList[position]
+        holder.bind(currentUser)
+    }
 
-        holder.textname.text = currentUser.name
+    class UserViewHolder(private val binding: UserLayoutBinding): RecyclerView.ViewHolder(binding.root) {
+        fun bind(user: UserData) {
+            binding.txtName.text = user.name
 
-        holder.itemView.setOnClickListener{
-            val intent = Intent(context,DMPageActivity::class.java)
-
-            intent.putExtra("name",currentUser.name)
-            intent.putExtra("uid", currentUser.id)
-
-            context.startActivity(intent)
-
+            binding.root.setOnClickListener {
+                val intent = Intent(binding.root.context, DMPageActivity::class.java)
+                intent.putExtra("name", user.name)
+                intent.putExtra("uid", user.id)
+                binding.root.context.startActivity(intent)
+            }
         }
     }
-
-    class UserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val textname = itemView.findViewById<TextView>(R.id.txt_name)
-    }
-
 }

@@ -3,19 +3,21 @@ package com.example.roombti
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.roombti.databinding.ActivityPersonInspectBinding
 
 class PersonInspectActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityPersonInspectBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_person_inspect)
+        binding = ActivityPersonInspectBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         enableEdgeToEdge()
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.root)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -25,32 +27,33 @@ class PersonInspectActivity : AppCompatActivity() {
         val user = intent.getSerializableExtra("user") as? UserData
         user?.let {
             // İsim
-            findViewById<TextView>(R.id.persond_inspect_name).text = it.name
+            binding.persondInspectName.text = it.name
             // Yaş
-            findViewById<TextView>(R.id.person_inspect_age).text = if (it.age != null) "${it.age} years old" else "-"
+            binding.personInspectAge.text = if (it.age != null) "${it.age} years old" else "-"
             // MBTI
-            findViewById<TextView>(R.id.person_inspect_mbti).text = it.mbti ?: "-"
+            binding.personInspectMbti.text = it.mbti ?: "-"
             // Üniversite
-            findViewById<TextView>(R.id.uni_info).text = ""
+            binding.uniInfo.text = ""
             // Lokasyon
-            findViewById<TextView>(R.id.istanbul_at).text = it.location ?: "-"
+            binding.istanbulAt.text = it.location ?: "-"
             // Evcil hayvan
-            findViewById<TextView>(R.id.has_no_pet).text = if (it.allowPets == true) "Has pet" else "Has no pet"
+            binding.hasNoPet.text = if (it.allowPets == true) "Has pet" else "Has no pet"
             // Sigara
-            findViewById<TextView>(R.id.smokes).text = if (it.allowSmoking == true) "Smokes" else "Doesn't smoke"
+            binding.smokes.text = if (it.allowSmoking == true) "Smokes" else "Doesn't smoke"
             // Cinsiyet
-            findViewById<TextView>(R.id.male).text = if (it.gender == "male") "Male" else "Female"
+            binding.gender.text = if (it.gender == "Male") "Male" else "Female"
             // Cinsiyet ikonunu değiştir
-            findViewById<View>(R.id.male_icon).setBackgroundResource(if (it.gender == "male") R.drawable.male_icon_black else R.drawable.female_icon)
+            binding.maleIcon.setBackgroundResource(if (it.gender == "Male") R.drawable.male_icon_black else R.drawable.female_icon_black)
         }
-        // Telefon numarası gösterilmeyecek, isterseniz ilgili TextView'i gizleyebilirsiniz:
-        findViewById<TextView>(R.id.person_inspect_phone_no)?.visibility = View.GONE
+        // Telefon numarası gösterilmeyecek
+        binding.personInspectPhoneNo.visibility = View.GONE
     }
 
     fun open_menu(view: View) {
         val intent = Intent(this, MenuScreenActivity::class.java)
         startActivity(intent)
     }
+
     fun open_chat(view: View) {
         val intent = Intent(this, DMPageActivity::class.java)
         startActivity(intent)

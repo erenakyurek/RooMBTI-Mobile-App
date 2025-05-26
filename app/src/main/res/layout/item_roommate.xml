@@ -40,14 +40,14 @@
     <!-- MBTI tipi -->
     <TextView
         android:id="@+id/textViewMbti"
-        android:layout_width="47dp"
+        android:layout_width="55dp"
         android:layout_height="22dp"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="278dp"
         android:layout_marginTop="25dp"
-        android:layout_alignParentLeft="true"
+        android:gravity="center_vertical"
         android:text="MBTI"
-        android:textAppearance="@style/mbti_type"
-        android:gravity="center_vertical" />
+        android:textAppearance="@style/mbti_type" />
 
     <!-- Cinsiyet simgesi -->
     <View
