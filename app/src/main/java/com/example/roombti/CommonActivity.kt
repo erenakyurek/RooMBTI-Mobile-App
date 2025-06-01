@@ -15,7 +15,6 @@ class CommonActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCommonBinding
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
-    //private lateinit var userId: String
 
     private lateinit var registerName: String
     private lateinit var registerSurname: String
@@ -37,10 +36,6 @@ class CommonActivity : AppCompatActivity() {
             insets
         }
 
-        // get the userId you put into the Intent back in RegisterActivity
-        //userId = intent.getStringExtra("USER_ID").orEmpty()
-
-        // 2) init your Realtime Database reference exactly as before
         firebaseDatabase  = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.reference.child("users")
 
