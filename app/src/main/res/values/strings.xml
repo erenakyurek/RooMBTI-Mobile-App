@@ -75,4 +75,15 @@
     <string name="slide_slogan">Find a roommate for your type.</string>
     <string name="app_version">App version: 1.0</string>
     <string name="title_activity_chats">ChatsActivity</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="change_email">Change Email</string>
+    <string name="change_mbti">Change MBTI</string>
+    <string name="change_university">Change University</string>
+    <string name="change_max_budget">Change Max. Budget</string>
+    <string name="change_min_budget">Change Min. Budget</string>
+    <string name="change_smoking_opt">Change Smoking Option</string>
+    <string name="change_pet_opt">Change Pet Option</string>
+    <string name="change_max_housemates">Change Max. Housemates</string>
+    <string name="change_min_housemates">Change Min. Housemates</string>
 </resources>
